@@ -1,209 +1,193 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
+// Centered vertical timeline: diamond markers on a center line,
+// entries alternating right/left. Collapses to a left rail on mobile.
 .experience-timeline {
-  --timeline-rail: 84px;
+  --marker-size: 34px;
+  --rail-gap: 40px;
 
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   position: relative;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1040px;
   display: flex;
   flex-direction: column;
+  gap: 36px;
 
-  /* vertical connecting line */
+  // Center line
   &::before {
     content: "";
     position: absolute;
-    top: 14px;
-    bottom: 14px;
-    left: calc((var(--timeline-rail) / 2) - 1px);
+    top: 0;
+    bottom: 0;
+    left: 50%;
     width: 2px;
-    background: $border-color;
-    opacity: 0.45;
-    border-radius: 2px;
+    transform: translateX(-50%);
+    background: var(--theme-border);
   }
 
   @media (max-width: $tablet) {
-    --timeline-rail: 56px;
+    --rail-gap: 20px;
+    gap: 28px;
+
+    &::before {
+      left: calc(var(--marker-size) / 2);
+    }
   }
 }
 
-.experience-timeline__company {
+.timeline-item {
   position: relative;
-  display: grid;
-  grid-template-columns: var(--timeline-rail) 1fr;
-  gap: 20px;
-  padding-bottom: 44px;
-
-  &:last-child {
-    padding-bottom: 0;
-  }
-
-  @media (max-width: $tablet) {
-    gap: 12px;
-    padding-bottom: 32px;
-  }
-}
-
-.experience-timeline__rail {
   display: flex;
-  justify-content: center;
-  padding-top: 4px;
-}
 
-.experience-timeline__badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: $bg-secondary;
-  border: 1px solid $border-color;
-  color: $accent-main;
-  font-family: $font-family-mono;
-  font-size: $fs-micro;
-  font-weight: $fw-semibold;
-  letter-spacing: 0.05em;
-  box-shadow: 0 0 0 4px $bg-primary;
-  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-
-  @media (max-width: $tablet) {
-    width: 34px;
-    height: 34px;
-  }
-}
-
-.experience-timeline__company:hover .experience-timeline__badge {
-  border-color: $border-accent;
-  color: $accent-hover;
-  box-shadow: 0 0 0 4px $bg-primary, $accent-glow-sm;
-}
-
-.experience-timeline__content {
-  min-width: 0;
-}
-
-.experience-timeline__head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px 16px;
-  flex-wrap: wrap;
-
-  h3 {
-    font-size: $fs-h4;
-    font-weight: $fw-bold;
-    color: $text-primary;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-}
-
-.experience-timeline__meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: $fs-micro;
-  font-weight: $fw-medium;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: $text-muted;
-}
-
-.experience-timeline__sep {
-  color: $border-color;
-}
-
-.experience-timeline__summary {
-  margin-top: 8px;
-  font-size: $fs-sm;
-  line-height: 1.65;
-  color: $text-secondary;
-}
-
-.experience-timeline__roles {
-  list-style: none;
-  margin: 18px 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.experience-timeline__role {
-  border: 1px solid $border-color;
-  border-left: 3px solid $accent-main;
-  border-radius: $border-radius-lg;
-  background: $bg-secondary;
-  padding: 16px 18px;
-  transition: border-color 0.2s ease, border-left-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-
-  &:hover {
-    border-color: rgba($accent-main, 0.35);
-    box-shadow: $accent-glow-sm;
-    transform: translateY(-1px);
+  &--right {
+    justify-content: flex-end;
   }
 
-  @media (max-width: $tablet) {
-    padding: 14px 14px;
+  &--left {
+    justify-content: flex-start;
+
+    .timeline-item__content {
+      text-align: right;
+    }
+
+    .timeline-item__achievements li {
+      padding-left: 0;
+      padding-right: 16px;
+
+      &::before {
+        left: auto;
+        right: 1px;
+      }
+    }
   }
-}
 
-.experience-timeline__role-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px 12px;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
+  &__marker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--marker-size);
+    height: var(--marker-size);
+    transform: translateX(-50%);
+    color: var(--theme-accent);
+    z-index: 1;
 
-  h4 {
-    font-size: $fs-body;
-    font-weight: $fw-bold;
-    color: $text-primary;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-}
-
-.experience-timeline__role-period {
-  font-size: $fs-micro;
-  font-weight: $fw-semibold;
-  color: $text-muted;
-  font-family: $font-family-mono;
-}
-
-.experience-timeline__achievements {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  li {
-    position: relative;
-    padding-left: 16px;
-    font-size: $fs-sm;
-    line-height: 1.6;
-    color: $text-secondary;
-
+    // Diamond outline behind the icon
     &::before {
       content: "";
       position: absolute;
-      left: 1px;
-      top: 9px;
-      width: 6px;
-      height: 6px;
-      background: $accent-main;
-      opacity: 0.6;
-      border-radius: 1px;
+      inset: 4px;
       transform: rotate(45deg);
+      border: 2px solid var(--theme-accent);
+      background: var(--section-bg, var(--theme-bg));
+      z-index: -1;
+      transition: background 0.2s ease;
+    }
+  }
+
+  &:hover &__marker::before {
+    background: rgba($accent-main, 0.12);
+  }
+
+  &__content {
+    width: calc(50% - var(--rail-gap));
+    min-width: 0;
+  }
+
+  &__period {
+    display: block;
+    font-family: $font-family-mono;
+    font-size: $fs-micro;
+    font-weight: $fw-bold;
+    letter-spacing: 0.05em;
+    color: var(--theme-text);
+  }
+
+  &__title {
+    margin-top: 6px;
+    font-size: $fs-h4;
+    font-weight: $fw-bold;
+    color: var(--theme-accent);
+    letter-spacing: 0.01em;
+  }
+
+  &__company {
+    margin-top: 2px;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    color: var(--theme-text);
+  }
+
+  &__summary {
+    margin-top: 6px;
+    font-size: $fs-sm;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--theme-text-muted);
+  }
+
+  &__achievements {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    li {
+      position: relative;
+      padding-left: 16px;
+      font-size: $fs-sm;
+      line-height: 1.65;
+      color: var(--theme-text-secondary);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 1px;
+        top: 9px;
+        width: 5px;
+        height: 5px;
+        background: var(--theme-accent);
+        opacity: 0.6;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    &--left,
+    &--right {
+      justify-content: flex-end;
+    }
+
+    &--left {
+      .timeline-item__content {
+        text-align: left;
+      }
+
+      .timeline-item__achievements li {
+        padding-left: 16px;
+        padding-right: 0;
+
+        &::before {
+          left: 1px;
+          right: auto;
+        }
+      }
+    }
+
+    &__marker {
+      left: calc(var(--marker-size) / 2);
+    }
+
+    &__content {
+      width: calc(100% - var(--marker-size) - var(--rail-gap));
     }
   }
 }

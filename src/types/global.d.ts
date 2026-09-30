@@ -5,6 +5,8 @@ declare module '*.scss' {
 
 interface ImportMetaEnv {
   readonly VITE_REMOTE_DEMOS_URL?: string;
+  readonly VITE_CHAT_API_URL?: string;
+  readonly DEV: boolean;
 }
 
 interface ImportMeta {

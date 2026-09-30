@@ -155,6 +155,18 @@
     transition: all 0.2s ease;
   }
 
+  // ── Mobile auth (controls are hidden below tablet) ──
+  &__mobile-auth {
+    display: none;
+
+    @media (max-width: $tablet) {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      margin-right: 0.5rem;
+    }
+  }
+
   // ── Mobile Menu Button ──
   &__menu-btn {
     display: none;

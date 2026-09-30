@@ -1,6 +1,21 @@
 import { z } from "zod";
 import { ApiError, Err, Ok, Result } from "./result";
 
+/** Extracts `{ message: string | string[] }` from an error body, if present. */
+async function readErrorMessage(response: Response): Promise<string | undefined> {
+    try {
+        const body: unknown = await response.json();
+        if (body && typeof body === "object" && "message" in body) {
+            const { message } = body as { message: unknown };
+            if (Array.isArray(message)) return message.join(", ");
+            if (typeof message === "string") return message;
+        }
+    } catch {
+        // Non-JSON error body — fall back to the status message.
+    }
+    return undefined;
+}
+
 export async function fetchJson<T>(
     url: string,
     schema: z.ZodSchema<T>,
@@ -25,7 +40,8 @@ export async function fetchJson<T>(
     if (!response.ok) {
         return Err(
             new ApiError(
-                `Request failed with status ${response.status}`,
+                (await readErrorMessage(response)) ??
+                    `Request failed with status ${response.status}`,
                 "http",
                 response.status
             )

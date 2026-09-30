@@ -3,7 +3,6 @@ import { ShieldCheck, Layers, Boxes } from "lucide-react";
 export const APPROACH_DATA = [
   {
     id: "safety",
-    icon: ShieldCheck,
     title: "Type Safety & Correctness",
     problem:
       "Loosely typed codebases lead to runtime bugs, unclear contracts between components, and slower onboarding for new engineers.",
@@ -13,7 +12,6 @@ export const APPROACH_DATA = [
   },
   {
     id: "state",
-    icon: Layers,
     title: "Scalable State Management",
     problem:
       "As apps grow, state logic becomes tangled — prop drilling, redundant fetching, and inconsistent data across components.",
@@ -23,7 +21,6 @@ export const APPROACH_DATA = [
   },
   {
     id: "architecture",
-    icon: Boxes,
     title: "Scalable Frontend Architecture",
     problem:
       "Monolithic frontend codebases become slow to build, hard to deploy independently, and risky to change — one team's bug can block everyone else.",

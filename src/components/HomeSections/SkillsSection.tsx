@@ -6,19 +6,16 @@ export function SkillsSection() {
     <FadeIn delay={0.2}>
       <section className="skills">
         <HeadingText title="Technologies I work with" label="// SKILLS" />
-        <div className="skills__icon-grid">
+        <ul className="skills__list">
           {TECH_ICONS.map(({ name, Icon }) => (
-            <span
-              key={name}
-              className="tech-icon-cell"
-              title={name}
-              role="img"
-              aria-label={name}
-            >
-              <Icon size={36} />
-            </span>
+            <li key={name} className="tech-item">
+              <span className="tech-item__icon" aria-hidden="true">
+                <Icon size={20} />
+              </span>
+              <span>{name}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
     </FadeIn>
   );

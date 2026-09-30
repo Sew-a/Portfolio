@@ -15,6 +15,31 @@
   }
 }
 
+// ─── Slanted section edges ───────────────────────
+// Cuts the top and/or bottom edge diagonally, like the reference layout.
+// Extra padding keeps content clear of the cut. $edges: top | bottom | both.
+$slant: 6vw;
+
+@mixin slanted-section($edges: both) {
+  @if $edges == top {
+    clip-path: polygon(0 $slant, 100% 0, 100% 100%, 0 100%);
+    padding-top: calc(#{$slant} + 4rem);
+  } @else if $edges == bottom {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$slant}), 0 100%);
+    padding-bottom: calc(#{$slant} + 4rem);
+  } @else {
+    clip-path: polygon(0 $slant, 100% 0, 100% calc(100% - #{$slant}), 0 100%);
+    padding-top: calc(#{$slant} + 4rem);
+    padding-bottom: calc(#{$slant} + 4rem);
+  }
+
+  // Re-apply after section-padding's mobile override.
+  @media (max-width: $tablet) {
+    @if $edges != bottom { padding-top: calc(#{$slant} + 2.5rem); }
+    @if $edges != top { padding-bottom: calc(#{$slant} + 2.5rem); }
+  }
+}
+
 // ─── Dark Card ───────────────────────────────────
 @mixin dark-card($radius: $border-radius-xl) {
   background: $bg-secondary;

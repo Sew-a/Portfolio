@@ -2,7 +2,6 @@ import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import express from "express";
 import cors from "cors";
-import { z } from "zod";
 
 // Initial users
 const users = [
@@ -62,32 +61,11 @@ const resolvers = {
     }
 };
 
-const contactSchema = z.object({
-    name: z.string().min(1).max(120),
-    email: z.string().email().max(200),
-    message: z.string().min(1).max(4000),
-});
-
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-app.post("/api/contact", (req, res) => {
-    const parsed = contactSchema.safeParse(req.body);
-    if (!parsed.success) {
-        res.status(400).json({
-            error: "Please fill in all fields with valid values.",
-            details: parsed.error.flatten().fieldErrors,
-        });
-        return;
-    }
-
-    // nodemailer SMTP sending is not configured yet (was also disabled in the
-    // original Next route). Re-enable with a real transport to send mail.
-    res.json({ ok: true });
-});
 
 app.listen(4001, () => {
     console.log(`🚀 API server ready at http://localhost:4001`);

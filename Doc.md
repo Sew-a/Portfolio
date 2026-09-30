@@ -92,6 +92,13 @@ these tokens — no hardcoded font values in component SCSS.
 
 ---
 
+## Chat Integration
+Authentication (popup), Zustand state management and a `/chat` group-chat page backed by the
+Railway chat API. See [CHAT_INTEGRATION.md](CHAT_INTEGRATION.md) for what's implemented,
+known backend issues, and what remains.
+
+---
+
 ## Future Roadmap
 - Integration of a live contact form with server actions.
 - Enhanced terminal interactivity for a truly immersive developer experience.

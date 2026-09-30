@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { useAppContext } from "@/src/contexts/appContext";
+import { useAppStore } from "@/src/store/useAppStore";
 import { TERMINAL_RESPONSES, TerminalCommand } from "@/src/utils/terminalCom";
 
-const VALID_ROUTES = ["home", "contact", "work"] as const;
+const VALID_ROUTES = ["home", "work"] as const;
 
 interface UseCommandHandlerProps {
   history: string[];
@@ -15,7 +15,7 @@ export function useCommandHandler({
   push,
   clear,
 }: UseCommandHandlerProps) {
-  const { setIsHacked } = useAppContext();
+  const setIsHacked = useAppStore((s) => s.setIsHacked);
   const navigate = useNavigate();
 
   const execute = (raw: string) => {

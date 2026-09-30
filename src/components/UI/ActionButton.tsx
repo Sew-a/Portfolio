@@ -27,7 +27,7 @@ export default function ActionButton({
   const classes = `action-button action-button--${buttonType} ${className}`;
 
   if (link) {
-    if (link.startsWith("#")) {
+    if (/^(#|mailto:|https?:)/.test(link)) {
       return (
         <a href={link} className={classes}>
           {content}

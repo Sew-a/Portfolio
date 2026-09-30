@@ -3,17 +3,20 @@ export const paths = {
     work: '/work',
     formBuilder: '/work/form-builder',
     aiAgents: '/work/ai-agents',
-    contact: '/contact',
     resume: '/resume',
     playground: '/playground',
     projects: '/projects',
     demos: '/demos',
+    chat: '/chat',
+    chatGroup: '/chat/:groupId',
 }
 
 export const routeNames = [
     { name: 'Portfolio', path: paths.home },
     { name: 'Work', path: paths.work },
     { name: 'Demos', path: paths.demos },
-    { name: 'Contact', path: paths.contact },
+    { name: 'Chat', path: paths.chat },
     { name: 'Resume', path: paths.resume },
 ]
+
+export const chatGroupPath = (groupId: string) => `${paths.chat}/${encodeURIComponent(groupId)}`;

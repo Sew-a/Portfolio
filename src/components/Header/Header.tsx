@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
-import { useAppContext } from "@/src/contexts/appContext";
+import { useAppStore } from "@/src/store/useAppStore";
+import { UserMenu } from "@/src/components/Auth";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useHeaderState } from "./useHeaderState";
-import { headerRoutes, HEADER_BRAND } from "./constants";
+import { headerRoutes, HEADER_BRAND, isActiveRoute } from "./constants";
 import "./styles.scss";
 
 export default function Header() {
   const { pathname, isOpen, isScrolled, toggleMenu } = useHeaderState();
-  const { theme, setTheme } = useAppContext();
+  const theme = useAppStore((s) => s.theme);
+  const toggleTheme = useAppStore((s) => s.toggleTheme);
 
   return (
     <header
@@ -20,7 +22,7 @@ export default function Header() {
             <Link
               key={route.path}
               to={route.path}
-              className={`header__nav-link ${pathname === route.path ? "active" : ""}`}
+              className={`header__nav-link ${isActiveRoute(pathname, route.path) ? "active" : ""}`}
             >
               {route.name}
             </Link>
@@ -30,15 +32,18 @@ export default function Header() {
         <div className="header__controls">
           <button
             className="header__theme-toggle"
-            onClick={() =>
-              setTheme((prev) => (prev === "dark" ? "light" : "dark"))
-            }
+            onClick={toggleTheme}
             aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
           >
             <span className="header__theme-icon">
               {theme === "dark" ? <Moon size={16} /> : <Sun size={16} />}
             </span>
           </button>
+          <UserMenu />
+        </div>
+
+        <div className="header__mobile-auth">
+          <UserMenu />
         </div>
 
         <button

@@ -1,4 +1,4 @@
-import { ACTION_NAMES, type ImageItemProps } from "@/src/contexts/types";
+import { ACTION_NAMES, type ImageItemProps } from "@/src/store/types";
 import "./styles.scss";
 import ActionButton from "../UI/ActionButton";
 import { ACTION_BUTTON_TYPE } from "../types";

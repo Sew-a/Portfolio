@@ -18,7 +18,9 @@ export default function Work() {
       />
       <ProjectsHero />
       <FeaturedProjects />
-      <ExpertiseSection />
+      <section className="slanted-band">
+        <ExpertiseSection />
+      </section>
       <Grid images={images} />
       <Testimonials />
     </div>

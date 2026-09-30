@@ -37,8 +37,24 @@ html {
   }
 }
 
+/* Lighter full-width band with diagonal top/bottom edges */
+.slanted-band {
+  @include slanted-section(both);
+  background-color: var(--theme-section-bg);
+
+  .expertise-section {
+    margin: 0;
+  }
+}
+
 .pages-spacing {
   @media (max-width: $tablet) {
     padding: 0px 8px 0 8px;
+
+    // Full-bleed slanted sections
+    > .projects-hero,
+    > .slanted-band {
+      margin-inline: -8px;
+    }
   }
 }

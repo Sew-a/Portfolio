@@ -8,6 +8,7 @@ const root = fileURLToPath(new URL(".", import.meta.url));
 export default defineConfig(({ mode }) => {
   // Cloudflare Pages injects env vars directly into process.env
   // Also support loadEnv for local development
+  const chatApiUrl = (process.env.VITE_CHAT_API_URL || loadEnv(mode, root).VITE_CHAT_API_URL || "https://chat-app-production-79fb.up.railway.app").replace(/\/+$/, "");
   const remoteDemosUrl = process.env.VITE_REMOTE_DEMOS_URL || loadEnv(mode, root).VITE_REMOTE_DEMOS_URL || "http://localhost:3001/remoteEntry.js";
 
   return {
@@ -47,6 +48,12 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       proxy: {
         "/api": "http://localhost:4001",
+        // Chat backend REST, proxied in dev to sidestep its CORS allow-list.
+        "/chat-api": {
+          target: chatApiUrl,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/chat-api/, "/api"),
+        },
       },
     },
     build: {

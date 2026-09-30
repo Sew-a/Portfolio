@@ -247,20 +247,27 @@ export const EXPERIENCE = [
   {
     company: "Picsart",
     location: "Yerevan, Armenia",
-    period: "May 2021 – Feb 2026",
+    period: "May 2021 – Present",
     companySummary:
       "AI-powered creative platform for photo, video, and design, serving 150M+ users worldwide.",
     roles: [
       {
-        title: "Frontend Engineer",
-        period: "Apr 2022 – Feb 2026",
+        title: "Frontend Engineer II",
+        period: "Mar 2025 – Present",
         achievements: [
           "Architected Frontend solutions for the photo editor, File System, component library, and Micro-frontend ecosystem serving 150M+ users.",
           "Created a reusable File System library, ~15 reusable components, and a unified interface contract, saving 20 hours per sprint.",
           "Built the Google Picker Micro-frontend from scratch with Module Federation, enabling reuse across 4 teams.",
-          "Developed the FullStorage Micro-frontend from scratch and contributed to the architecture of 5+ production Micro-frontends, enabling independent integration and releases.",
-          "Architected a cross-project Commenting Micro-frontend and leveraged Cursor + Claude for API integration, reducing delivery time from 6 to 3 weeks.",
           "Reduced production bugs in the core editor by 9.3% through Datadog-driven root-cause analysis.",
+        ],
+      },
+      {
+        title: "Frontend Engineer I",
+        period: "Apr 2022 – Feb 2025",
+        achievements: [
+          "Architected a cross-project Commenting Micro-frontend and leveraged Cursor + Claude for API integration, reducing delivery time from 6 to 3 weeks.",
+          "Developed the Storage Micro-frontend from scratch and contributed to the architecture of 5+ production Micro-frontends, enabling independent integration and releases.",
+          "Automated landing page data migration from local storage to CDN, optimizing content delivery architecture.",
           "Increased unit test coverage across the landing and File System projects to 50–65% within 3–5 weeks.",
         ],
       },
@@ -270,8 +277,7 @@ export const EXPERIENCE = [
         achievements: [
           "Built and optimized React/Next.js landing pages for web performance.",
           "Increased the main page Lighthouse performance score to 90%.",
-          "Built and contributed to 20+ landing pages, maintaining Lighthouse scores of 75-85%.",
-          "Automated landing page data migration from local storage to CDN, optimizing content delivery architecture.",
+          "Built and contributed to 20+ landing pages, maintaining Lighthouse scores of 75–85%.",
         ],
       },
     ],
@@ -289,7 +295,7 @@ export const EXPERIENCE = [
         achievements: [
           "Built lightweight landing pages and e-commerce interfaces with HTML, CSS/Sass, JavaScript, jQuery, and React.",
           "Migrated legacy vanilla JavaScript functionality to React, improving maintainability and extensibility.",
-          "Optimized Frontend performance, achieving 80-90% Lighthouse scores.",
+          "Optimized Frontend performance, achieving 80–90% Lighthouse scores.",
         ],
       },
     ],

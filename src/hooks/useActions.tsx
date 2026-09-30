@@ -1,5 +1,5 @@
-import { useAppContext } from "@/src/contexts/appContext";
-import { ACTION_NAMES, ActionType } from "@/src/contexts/types";
+import { useAppStore } from "@/src/store/useAppStore";
+import { ACTION_NAMES, ActionType } from "@/src/store/types";
 import { useCallback } from "react";
 
 type ActionData = {
@@ -10,7 +10,7 @@ type ActionData = {
 };
 
 const useActions = () => {
-  const { setImageFiles } = useAppContext();
+  const setImageFiles = useAppStore((s) => s.setImageFiles);
 
   // Delete image action
   const deleteImage = useCallback(

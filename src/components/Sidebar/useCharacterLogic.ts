@@ -26,7 +26,7 @@ export function useCharacterLogic() {
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      const key = e.key.toLowerCase();
+      const key = e?.key?.toLowerCase();
       
       if (key === "escape") {
         setCurrentAction("dead");
@@ -46,7 +46,7 @@ export function useCharacterLogic() {
     };
 
     const handleKeyUp = (e: KeyboardEvent) => {
-      const key = e.key.toLowerCase();
+      const key = e?.key?.toLowerCase();
       if (["a", "d", "arrowleft", "arrowright"].includes(key)) {
         keysPressed.current.delete(key);
         if (keysPressed.current.size === 0) {

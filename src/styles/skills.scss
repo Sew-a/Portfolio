@@ -11,39 +11,43 @@
     gap: 1rem;
   }
 
-  &__icon-grid {
+  // Two-column icon + name list
+  &__list {
     @include content-wrapper;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 3rem;
   }
 }
 
-.tech-icon-cell {
+.tech-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border: 1px solid $border-color;
-  border-radius: $border-radius-md;
-  background: $bg-secondary;
-  color: $text-secondary;
-  transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s;
+  gap: 14px;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--theme-border);
+  font-size: $fs-body;
+  font-weight: $fw-medium;
+  color: var(--theme-text-secondary);
+  transition: color 0.2s;
 
-  &:hover {
-    border-color: rgba($accent-main, 0.4);
-    color: $accent-main;
-    background: rgba($accent-main, 0.04);
-    transform: translateY(-2px);
+  &__icon {
+    display: flex;
+    flex-shrink: 0;
+    color: var(--theme-text-muted);
+    transition: color 0.2s;
   }
 
-  svg {
-    width: 26px;
-    height: 26px;
-    flex-shrink: 0;
-    opacity: 0.9;
+  &:hover,
+  &:hover &__icon {
+    color: var(--theme-accent);
+  }
+
+  @media (max-width: $tablet) {
+    gap: 10px;
+    font-size: $fs-sm;
   }
 }
 

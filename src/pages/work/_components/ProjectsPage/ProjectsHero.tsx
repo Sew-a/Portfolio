@@ -29,7 +29,6 @@ export default function ProjectsHero() {
           {PROJECTS_HERO.lead}
         </motion.p>
       </div>
-      <div className="projects-hero__fade" />
     </section>
   );
 }

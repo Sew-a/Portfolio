@@ -1,0 +1,187 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+// ── Modal ──
+.auth-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+
+  &__dialog {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    padding: 1.75rem 1.5rem 1.5rem;
+    background-color: var(--theme-card-bg);
+    border: 1px solid var(--theme-border);
+    border-radius: $border-radius-xl;
+    color: var(--theme-text);
+  }
+
+  &__close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    padding: 4px;
+    background: none;
+    border: none;
+    color: var(--theme-text-secondary);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--theme-accent);
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: $fs-h4;
+    font-weight: $fw-bold;
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--theme-border);
+  }
+
+  &__tab {
+    flex: 1;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    color: var(--theme-text-secondary);
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    cursor: pointer;
+
+    &--active {
+      color: var(--theme-accent);
+      border-bottom-color: var(--theme-accent);
+    }
+  }
+
+  &__error {
+    margin-top: 0.75rem;
+    font-size: $fs-sm;
+    color: $accent-red;
+  }
+}
+
+// ── Form ──
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: $fs-micro;
+    font-weight: $fw-medium;
+    color: var(--theme-text-secondary);
+
+    input {
+      padding: 0.6rem 0.75rem;
+      background-color: var(--theme-bg);
+      border: 1px solid var(--theme-border);
+      border-radius: $border-radius-md;
+      color: var(--theme-text);
+      font-size: $fs-sm;
+      outline: none;
+
+      &:focus {
+        border-color: var(--theme-accent);
+      }
+    }
+  }
+
+  &__submit {
+    @include btn-primary;
+    margin-top: 0.25rem;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// ── Header user menu ──
+.user-menu {
+  position: relative;
+
+  &__signin {
+    @include btn-ghost;
+    padding: 5px 12px;
+    font-size: $fs-micro;
+  }
+
+  &__trigger {
+    display: flex;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 200px;
+    padding: 0.5rem;
+    background-color: var(--theme-card-bg);
+    border: 1px solid var(--theme-border);
+    border-radius: $border-radius-lg;
+    z-index: 10;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 0.4rem 0.5rem 0.6rem;
+    margin-bottom: 0.25rem;
+    border-bottom: 1px solid var(--theme-border);
+    font-size: $fs-sm;
+    color: var(--theme-text);
+
+    span {
+      font-size: $fs-micro;
+      color: var(--theme-text-muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.45rem 0.5rem;
+    background: none;
+    border: none;
+    border-radius: $border-radius-sm;
+    color: var(--theme-text-secondary);
+    font-size: $fs-sm;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--theme-accent);
+      background-color: rgba($accent-main, 0.06);
+    }
+  }
+}

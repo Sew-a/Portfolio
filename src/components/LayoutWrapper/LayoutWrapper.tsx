@@ -4,7 +4,11 @@ import Header from "@/src/components/Header";
 import FollowSection from "@/src/components/FollowSection";
 import Footer from "@/src/components/Footer";
 import FixedCharacter from "@/src/components/FixedCharacter";
+import { AuthModal } from "@/src/components/Auth";
 import { useScrollToTop } from "@/src/hooks/useScrollToTop";
+import { useThemeSync } from "@/src/hooks/useThemeSync";
+import { useAuthSession } from "@/src/hooks/useAuthSession";
+import { useAuthStore } from "@/src/store/useAuthStore";
 import { pageTransition } from "./constants";
 
 export default function LayoutWrapper({
@@ -14,7 +18,11 @@ export default function LayoutWrapper({
 }) {
   const { pathname } = useLocation();
 
+  const isAuthModalOpen = useAuthStore((s) => s.isAuthModalOpen);
+
   useScrollToTop();
+  useThemeSync();
+  useAuthSession();
 
   return (
     <div className="main-theme-wrapper">
@@ -39,6 +47,7 @@ export default function LayoutWrapper({
         </div>
       </div>
       <FixedCharacter />
+      <AnimatePresence>{isAuthModalOpen && <AuthModal />}</AnimatePresence>
     </div>
   );
 }

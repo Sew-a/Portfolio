@@ -10,22 +10,10 @@ type ApproachCardProps = {
 };
 
 export default function ApproachCard({ item, delay = 0 }: ApproachCardProps) {
-  const Icon = item.icon as ComponentType<{ size?: number; strokeWidth?: number }>;
-
   return (
     <FadeIn delay={delay}>
       <article className={`approach-card approach-card--${item.id}`}>
-        <div className="approach-card__head">
-          <span className="approach-card__icon" aria-hidden="true">
-            <Icon size={26} strokeWidth={1.6} />
-          </span>
-          <span className="approach-card__index" aria-hidden="true">
-            0{APPROACH_DATA.indexOf(item) + 1}
-          </span>
-        </div>
-
         <h3 className="approach-card__title">{item.title}</h3>
-
         <div className="approach-card__block">
           <span className="approach-card__label">Problem</span>
           <p className="approach-card__text">{item.problem}</p>

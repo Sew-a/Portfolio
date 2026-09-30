@@ -9,7 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $bg-primary;
+  background-color: var(--theme-hero-bg);
+  @include slanted-section(bottom);
 
   // Appwrite-style dotted grid pattern
   &__grid-dots {
@@ -71,17 +72,6 @@
     margin-top: 0.75rem;
     max-width: 520px;
     line-height: 1.7;
-  }
-
-  &__fade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    background: linear-gradient(180deg, transparent, $bg-primary);
-    z-index: 1;
-    pointer-events: none;
   }
 }
 
