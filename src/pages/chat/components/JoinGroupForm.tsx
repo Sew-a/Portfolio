@@ -18,6 +18,9 @@ const JoinGroupForm: React.FC<JoinGroupFormProps> = ({ onJoin, isPending }) => {
       <h3>Join with invite code</h3>
       <div className="chat-form__row">
         <input
+          id="invite-code"
+          type="text"
+          name="invite-code"
           placeholder="e.g. K7M2P9QX"
           required
           value={code}

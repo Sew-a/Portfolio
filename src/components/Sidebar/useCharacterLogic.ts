@@ -38,11 +38,6 @@ export function useCharacterLogic() {
         keysPressed.current.add(key);
         setIsRunning(true);
       }
-      // Action keys
-      if (key === " ") {
-        e.preventDefault();
-        setCurrentAction("jump");
-      }
     };
 
     const handleKeyUp = (e: KeyboardEvent) => {

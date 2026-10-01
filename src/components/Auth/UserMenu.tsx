@@ -23,11 +23,10 @@ const UserMenu: React.FC = () => {
 
   if (!user) {
     return (
-      // <button className="user-menu__signin" onClick={() => openAuthModal("signin")}>
-      //   <LogIn size={14} />
-      //   Sign in
-      // </button>
-      null
+      <button className="user-menu__signin" onClick={() => openAuthModal("signin")}>
+        <LogIn size={14} />
+        Sign in
+      </button>
     );
   }
 

@@ -3,9 +3,9 @@
 
 .chat-page {
   width: 100%;
-  max-width: 760px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 6.5rem 1rem 2rem;
+  padding: 3rem 1rem 2rem;
   color: var(--theme-text);
 
   &__title {
@@ -100,7 +100,6 @@
     align-items: center;
     gap: 0.75rem;
     padding: 0.85rem 1rem;
-    background-color: var(--theme-card-bg);
     border: 1px solid var(--theme-border);
     border-radius: $border-radius-lg;
     color: var(--theme-text);
@@ -126,7 +125,6 @@
 
 .chat-form {
   padding: 1rem;
-  background-color: var(--theme-card-bg);
   border: 1px solid var(--theme-border);
   border-radius: $border-radius-lg;
 
@@ -146,15 +144,12 @@
   }
 }
 
-// ── Room ──
 .chat-room {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 9rem);
   min-height: 420px;
-  background-color: var(--theme-card-bg);
   border: 1px solid var(--theme-border);
-  border-radius: $border-radius-xl;
   overflow: hidden;
 
   &__header {

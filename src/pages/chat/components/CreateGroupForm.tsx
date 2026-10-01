@@ -18,6 +18,9 @@ const CreateGroupForm: React.FC<CreateGroupFormProps> = ({ onCreate, isPending }
       <h3>Create a group</h3>
       <div className="chat-form__row">
         <input
+          id="group-name"
+          type="text"
+          name="group-name"
           placeholder="Group name (optional)"
           value={name}
           onChange={(e) => setName(e.target.value)}

@@ -14,6 +14,8 @@ const MessageComposer: React.FC<{ onSend: (content: string) => void }> = ({ onSe
   return (
     <form className="chat-room__composer" onSubmit={handleSubmit}>
       <input
+        type="text"
+        name="message"
         placeholder="Write a message…"
         aria-label="Message"
         value={text}
