@@ -1,7 +1,7 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Plaster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Moirai+One&display=swap');
 
 
 .header {
@@ -35,6 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 36px;
 
     @media (max-width: $tablet) {
       justify-content: flex-start;
@@ -43,10 +44,11 @@
 
   .header__logo {
     flex: 1;
-    font-size: $fs-h3;
-    font-weight: $fw-regular;
+    font-size: $fs-h2;
     color: $accent-main;
-    font-family: "Plaster", system-ui;
+     font-family: "Moirai One", system-ui;
+  font-weight: $fw-regular;
+  font-style: normal;
 
     @media (max-width: $tablet) {
       margin-right: 0.5rem;

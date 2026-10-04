@@ -7,7 +7,6 @@ import OverviewSection from "./sections/OverviewSection";
 import ArchitectureSection from "./sections/ArchitectureSection";
 import FeaturesSection from "./sections/FeaturesSection";
 import HighlightsSection from "./sections/HighlightsSection";
-import ProjectCta from "./sections/ProjectCta";
 import type { ProjectDetailProps } from "./types";
 import "./styles.scss";
 
@@ -29,7 +28,6 @@ export default function ProjectDetail({ slug }: ProjectDetailProps) {
       <ArchitectureSection project={project} />
       <FeaturesSection project={project} />
       <HighlightsSection project={project} />
-      <ProjectCta />
     </section>
   );
 }

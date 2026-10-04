@@ -1,7 +1,8 @@
 export const paths = {
     home: '/',
     work: '/work',
-    formBuilder: '/work/form-builder',
+    microCanvas: '/work/micro-canvas',
+    chatApp: '/work/chat-app',
     aiAgents: '/work/ai-agents',
     resume: '/resume',
     playground: '/playground',

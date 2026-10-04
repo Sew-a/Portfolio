@@ -9,7 +9,7 @@ import { useScrollToTop } from "@/src/hooks/useScrollToTop";
 import { useThemeSync } from "@/src/hooks/useThemeSync";
 import { useAuthSession } from "@/src/hooks/useAuthSession";
 import { useAuthStore } from "@/src/store/useAuthStore";
-import { pageTransition } from "./constants";
+import { CHARACTER_HIDDEN_ROUTES, pageTransition } from "./constants";
 
 export default function LayoutWrapper({
   children,
@@ -19,6 +19,9 @@ export default function LayoutWrapper({
   const { pathname } = useLocation();
 
   const isAuthModalOpen = useAuthStore((s) => s.isAuthModalOpen);
+  const showCharacter = !CHARACTER_HIDDEN_ROUTES.some(
+    (route) => pathname === route || pathname.startsWith(`${route}/`),
+  );
 
   useScrollToTop();
   useThemeSync();
@@ -46,7 +49,7 @@ export default function LayoutWrapper({
           <Footer />
         </div>
       </div>
-      <FixedCharacter />
+      {showCharacter && <FixedCharacter />}
       <AnimatePresence>{isAuthModalOpen && <AuthModal />}</AnimatePresence>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Monitor, Gamepad2, Bot } from 'lucide-react';
+import { Layers, Gamepad2, Bot } from 'lucide-react';
 import type { ExpertiseItem } from './types';
 
 export const EXPERTISE_HEADING = {
@@ -8,16 +8,17 @@ export const EXPERTISE_HEADING = {
 
 export const EXPERTISE_DATA: ExpertiseItem[] = [
   {
-    icon: Monitor,
-    variant: "frontend",
-    title: "Frontend Dev",
-    desc: "Specialized in crafting pixel-perfect landing pages and responsive styling. Experienced in writing modern, clean code and seamlessly integrating dynamic animation libraries to build immersive, interactive user experiences.",
+    icon: Layers,
+    variant: "fullstack",
+    title: "Full-stack Dev",
+    desc: "Frontend architecture, micro-frontends (Module Federation), reusable component libraries, performance, and testing on a platform serving 150M+ users, plus full-stack features end-to-end: React clients on NestJS, WebSocket, and PostgreSQL backends.",
     emphasis: [
-      "Engineered a FileSystem as a Service library adopted across 2 products",
-      "Developed a universal Google Picker integration eliminating duplicate work across 4 teams",
-      "Created 5+ production micro-frontend applications serving ~150M users"
+      "Set up 3 production micro-frontends from scratch for a platform serving 150M+ users",
+      "Built the Google Picker micro-frontend (Drive import, OAuth, analytics) reused across 4 teams",
+      "Built a ~15-component library (incl. a File System) saving 20 hours per sprint",
+      "Built a real-time group chat: React client + NestJS / Socket.io backend with JWT auth, PostgreSQL and Prisma"
     ],
-    skills: ["React", "TypeScript", "Next.js", "GraphQL", "Redux", "Webpack", "Jest"]
+    skills: ["React", "TypeScript", "Next.js", "NestJS", "Socket.io", "PostgreSQL", "Prisma", "GraphQL", "Redux", "Webpack", "Jest", "Storybook"]
   },
   {
     icon: Gamepad2,

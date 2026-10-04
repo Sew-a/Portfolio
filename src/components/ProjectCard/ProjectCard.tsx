@@ -5,6 +5,7 @@ import Image from "@/src/components/Image";
 import { paths } from "@/src/routes/mainRoutes";
 import { getProjectIcon } from "@/src/constants/projectIcons";
 import type { Project } from "@/src/data/portfolioData";
+import LiveLink from "./LiveLink";
 import "./styles.scss";
 
 interface ProjectCardProps {
@@ -85,14 +86,9 @@ export default function ProjectCard({
             Case study <ArrowUpRight size={16} />
           </Link>
           {project.links.live && (
-            <a
-              href={project.links.live}
-              target="_blank"
-              rel="noreferrer"
-              className="featured-project__link"
-            >
+            <LiveLink href={project.links.live} className="featured-project__link">
               Live site <ArrowUpRight size={16} />
-            </a>
+            </LiveLink>
           )}
           <a
             href={project.links.repo}

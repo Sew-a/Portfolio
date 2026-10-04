@@ -26,10 +26,6 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ onSubmit, isPending }) => {
 
   return (
     <form className="auth-form" onSubmit={handleSubmit}>
-      <p>
-        If your having problems signing in, Please wait a couple days and try
-        again.
-      </p>
       <label className="auth-form__field">
         <span>Username</span>
         <input

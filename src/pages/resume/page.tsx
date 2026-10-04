@@ -7,7 +7,7 @@ export default function Resume() {
     <div className="pages-spacing">
       <Seo
         title="Résumé — Sevak Avetisyan"
-        description="Senior Frontend Engineer résumé — React, TypeScript, Micro-frontends."
+        description="Frontend Engineer résumé — React, TypeScript, Micro-frontends. Open to Senior Frontend roles."
       />
       <ResumePage />
     </div>

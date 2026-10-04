@@ -181,6 +181,30 @@
     display: block;
   }
 
+  &__extra-shot {
+    margin: 2rem 64px 0;
+
+    @media (max-width: $desktop) {
+      margin: 2rem 0 0;
+    }
+
+    figcaption {
+      margin-top: 0.75rem;
+      color: $text-muted;
+      font-family: $font-family-mono;
+      font-size: $fs-micro;
+      text-align: center;
+    }
+  }
+
+  &__extra-shot-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-lg;
+  }
+
   &__overview,
   &__architecture,
   &__features,

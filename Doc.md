@@ -105,4 +105,4 @@ known backend issues, and what remains.
 - More project case studies with detailed technical breakdowns.
 
 ---
-*Created by [Sevak Avetisyan](https://www.linkedin.com/in/sevak-avetisyan-6122411b2/)*
+*Created by [Sevak Avetisyan](https://www.linkedin.com/in/sevak-avetisyan-arm/)*

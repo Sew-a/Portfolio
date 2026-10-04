@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import DemosIntro from "../DemosIntro/DemosIntro";
 import CanvasMiniapp from "../CanvasMiniapp/CanvasMiniapp";
+import ChatDemo from "../ChatDemo/ChatDemo";
 
 const BANNER_EXIT = {
   opacity: 0,
@@ -21,6 +22,17 @@ export default function DemosExperience() {
     <AnimatePresence>
       {!miniappOpen && (
         <motion.section
+          key="chat-demo"
+          className="demos-page__banner demos-page__banner--chat"
+          exit={BANNER_EXIT}
+          transition={{ duration: 0.3 }}
+        >
+          <ChatDemo />
+        </motion.section>
+      )}
+      {!miniappOpen && (
+        <motion.section
+          key="canvas-intro"
           className="demos-page__banner"
           exit={BANNER_EXIT}
           transition={{ duration: 0.3 }}
@@ -28,9 +40,9 @@ export default function DemosExperience() {
           <DemosIntro onOpen={() => setMiniAppOpen(true)} />
         </motion.section>
       )}
-
       {miniappOpen && (
         <motion.section
+          key="canvas-miniapp"
           className="demos-page__miniapp"
           {...MINIAPP_ENTRY}
         >

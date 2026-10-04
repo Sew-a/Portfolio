@@ -144,7 +144,6 @@ a {
 
   .section-label,
   .portfolio__label,
-  .hero__tag,
   .prompt {
     color: var(--theme-accent);
   }
@@ -372,7 +371,7 @@ a {
 
     .expertise-skills-label { color: var(--theme-text-muted); }
 
-    &--frontend {
+    &--fullstack {
       border-color: rgba(0, 119, 182, 0.15);
       &:hover { border-color: var(--theme-accent); box-shadow: 0 8px 24px rgba(0, 119, 182, 0.06); }
       .expertise-skill-tag { background: rgba(0, 119, 182, 0.05); border-color: rgba(0, 119, 182, 0.2); color: var(--theme-accent); }
@@ -449,12 +448,6 @@ a {
   .boring-text { color: var(--theme-text-muted); }
 
   .grid-wrapper { background-color: transparent; }
-
-  .hero__tag {
-    color: var(--theme-accent);
-    border-color: rgba(0, 119, 182, 0.25);
-    background: rgba(0, 119, 182, 0.05);
-  }
 
   .grid-card {
     background: rgba(255, 255, 255, 0.6);

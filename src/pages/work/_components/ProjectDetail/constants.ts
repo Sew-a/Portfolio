@@ -34,9 +34,3 @@ export const PROJECT_HERO_COPY = {
   liveSite: "Visit live site",
   sourceCode: "View source code",
 };
-
-export const PROJECT_CTA = {
-  message: "Like what you see? Let's build something together.",
-  getInTouch: "Get in touch →",
-  backToWork: "← Back to work",
-};

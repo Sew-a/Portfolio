@@ -1,9 +1,10 @@
-import { ClipboardList, Bot, FolderOpen } from "lucide-react";
+import { Bot, FolderOpen, MessagesSquare, PenTool } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export const PROJECT_ICONS: Record<string, LucideIcon> = {
-  ClipboardList,
   Bot,
+  MessagesSquare,
+  PenTool,
 };
 
 export const FALLBACK_PROJECT_ICON: LucideIcon = FolderOpen;

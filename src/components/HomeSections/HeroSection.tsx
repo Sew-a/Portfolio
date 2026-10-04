@@ -13,9 +13,6 @@ export function HeroSection() {
         <div className="hero__grid-dots" aria-hidden="true" />
         <Parallax speed={-34} className="hero__parallax">
           <div className="hero__content hero__content--centered">
-            <motion.span className="hero__tag" {...HERO_ANIMATIONS.tag}>
-              {HERO_DATA.tag}
-            </motion.span>
             <motion.h1 className="hero__heading" {...HERO_ANIMATIONS.heading}>
               {HERO_DATA.name}
               <br />

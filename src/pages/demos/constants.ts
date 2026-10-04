@@ -40,7 +40,30 @@ export const DEMOS_INTRO = {
   openLabel: "Open Canvas Miniapp",
 };
 
+export const CHAT_TECHNOLOGIES = [
+  "React",
+  "TypeScript",
+  "NestJS",
+  "Socket.io",
+  "PostgreSQL",
+  "Prisma",
+];
+
+export const CHAT_DEMO = {
+  label: "// Full-stack demo",
+  title: "Group Chat",
+  leadOne:
+    "Real-time group chat with a React client and a NestJS backend. Sign up, create a group to get an invite code or join one, and messages reach everyone in the room instantly over Socket.io.",
+  leadTwo: "Sign in and start a conversation. Share the invite code to bring someone in.",
+  techLabel: "Technologies",
+  openLabel: "Open Chat",
+  barTitle: "chat.app",
+  image:
+    "https://res.cloudinary.com/dlggumsot/image/upload/v1791109631/Screenshot_2026-10-04_141901_kuedn4.webp",
+  imageAlt: "Group chat room with messages and an invite code",
+};
+
 export const DEMOS_SEO = {
   title: "Demos — Sevak Avetisyan",
-  description: "Interactive demos powered by micro frontends.",
+  description: "Interactive demos: a micro-frontend canvas loaded at runtime and a real-time group chat.",
 };

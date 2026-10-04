@@ -107,4 +107,4 @@ Deploying to one path does not deploy the other.
 - More project case studies with detailed technical breakdowns.
 
 ---
-*Created by [Sevak Avetisyan](https://www.linkedin.com/in/sevak-avetisyan-6122411b2/)*
+*Created by [Sevak Avetisyan](https://www.linkedin.com/in/sevak-avetisyan-arm/)*

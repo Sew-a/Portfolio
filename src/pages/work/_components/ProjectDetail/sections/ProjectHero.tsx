@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { paths } from "@/src/routes/mainRoutes";
 import type { Project } from "@/src/data/portfolioData";
 import { getProjectIcon } from "@/src/constants/projectIcons";
+import LiveLink from "@/src/components/ProjectCard/LiveLink";
 import { PROJECT_HERO_COPY } from "../constants";
 
 interface ProjectHeroProps {
@@ -50,14 +51,12 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
 
         <div className="project-detail__links">
           {project.links.live && (
-            <a
+            <LiveLink
               href={project.links.live}
-              target="_blank"
-              rel="noreferrer"
               className="project-detail__link project-detail__link--primary"
             >
               {PROJECT_HERO_COPY.liveSite} <ArrowUpRight size={16} />
-            </a>
+            </LiveLink>
           )}
           <a
             href={project.links.repo}

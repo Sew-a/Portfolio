@@ -6,7 +6,7 @@ const FollowSection = () => {
       <div className="follow-section__inner">
         <span className="follow-section__title">Follow me</span>
         <a
-          href="https://www.linkedin.com/in/sevak-avetisyan-6122411b2"
+          href="https://www.linkedin.com/in/sevak-avetisyan-arm/"
           target="_blank"
           className="follow-link"
           title="LinkedIn"
