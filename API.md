@@ -87,6 +87,15 @@ Request body (either field optional):
 { "username": "new-name", "avatarUrl": "https://example.com/new.png" }
 ```
 
+Send `"avatarUrl": null` to remove the avatar.
+
+### Upload an avatar
+
+`POST /api/users/me/avatar` — requires auth. `multipart/form-data` with field **`file`**
+(JPEG/PNG/WebP/GIF/AVIF, max 10 MB). Stores the image and sets it as the avatar.
+Returns the updated profile (`{ id, email, username, avatarUrl }`).
+At sign-up: sign up first, then call this with the new token.
+
 ---
 
 ## 3. Groups (this is the "create/join chat" step, right after sign-in)

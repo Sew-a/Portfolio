@@ -53,5 +53,14 @@ export const useChatStore = create<ChatState>()((set) => ({
         ),
       },
     })),
+  updateMessageAuthor: (user) =>
+    set((s) => ({
+      messagesByGroup: Object.fromEntries(
+        Object.entries(s.messagesByGroup).map(([groupId, messages]) => [
+          groupId,
+          messages.map((m) => (m.userId === user.id ? { ...m, user } : m)),
+        ]),
+      ),
+    })),
   reset: () => set(initialState),
 }));

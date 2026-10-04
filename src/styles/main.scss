@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "./variables" as *;
+@use "./mixins" as *;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -54,6 +55,19 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+/* Page scrollbar — same style as the chat panels. Colors mirror the theme
+   wrapper's --theme-border / --theme-accent; data-theme is set by applyThemeClass. */
+html {
+  --scrollbar-thumb: #2c2c35;
+  --scrollbar-thumb-hover: #00f0ff;
+  @include themed-scrollbar(var(--scrollbar-thumb), var(--scrollbar-thumb-hover), 8px);
+
+  &[data-theme="light"] {
+    --scrollbar-thumb: #e4e4e7;
+    --scrollbar-thumb-hover: #0077b6;
   }
 }
 

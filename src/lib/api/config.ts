@@ -15,3 +15,14 @@ export const CHAT_REST_URL = import.meta.env.DEV ? "/chat-api" : `${CHAT_ORIGIN}
 export const CHAT_SOCKET_URL = `${CHAT_ORIGIN}/chat`;
 
 export const MESSAGES_PAGE_SIZE = 30;
+
+/** Image uploads (avatars, message images): mirrors the backend's whitelist and size cap. */
+export const IMAGE_MIME_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif", "image/avif"];
+export const MAX_IMAGE_BYTES = 10 * 1024 * 1024;
+
+/** Returns an error message for files the backend would reject, or null if the file is fine. */
+export function validateImageFile(file: File): string | null {
+  if (!IMAGE_MIME_TYPES.includes(file.type)) return "Use a JPEG, PNG, WebP, GIF or AVIF image.";
+  if (file.size > MAX_IMAGE_BYTES) return "Image must be 10 MB or smaller.";
+  return null;
+}

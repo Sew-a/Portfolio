@@ -3,7 +3,7 @@ import "./Avatar.scss";
 interface AvatarProps {
   name: string;
   src?: string | null;
-  size?: "sm" | "md";
+  size?: "sm" | "md" | "lg";
 }
 
 /** User avatar image, falling back to the first letter of the name. */

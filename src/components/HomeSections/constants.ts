@@ -11,6 +11,8 @@ import {
   SiHtml5,
   SiCss,
   SiStorybook,
+  SiNestjs,
+  SiPostgresql,
 } from "react-icons/si";
 import { GiBearFace } from "react-icons/gi";
 
@@ -24,6 +26,8 @@ export const TECH_ICONS: { name: string; Icon: ComponentType<{ size?: number }> 
   { name: "Zustand", Icon: GiBearFace },
   { name: "GraphQL", Icon: SiGraphql },
   { name: "Node.js", Icon: SiNodedotjs },
+  { name: "NestJS", Icon: SiNestjs },
+  { name: "PostgreSQL", Icon: SiPostgresql },
   { name: "HTML", Icon: SiHtml5 },
   { name: "CSS", Icon: SiCss },
   { name: "Storybook", Icon: SiStorybook },

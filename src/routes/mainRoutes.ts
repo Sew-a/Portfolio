@@ -13,10 +13,10 @@ export const paths = {
 }
 
 export const routeNames = [
-    { name: 'Portfolio', path: paths.home },
+    { name: 'Main', path: paths.home },
     { name: 'Work', path: paths.work },
     { name: 'Demos', path: paths.demos },
-    { name: 'Chat', path: paths.chat },
+    { name: 'Chat App', path: paths.chat },
     { name: 'Resume', path: paths.resume },
 ]
 

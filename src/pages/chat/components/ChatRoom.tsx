@@ -1,8 +1,5 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 import { useChatRoom } from "@/src/hooks/useChatRoom";
 import type { ChatGroup } from "@/src/lib/api/schemas";
-import { paths } from "@/src/routes/mainRoutes";
 import { useAuthStore } from "@/src/store/useAuthStore";
 import { groupDisplayName } from "../constants";
 import InviteCode from "./InviteCode";
@@ -21,9 +18,6 @@ const ChatRoom: React.FC<ChatRoomProps> = ({ groupId, group }) => {
   return (
     <section className="chat-room">
       <header className="chat-room__header">
-        <Link to={paths.chat} className="chat-room__back" aria-label="Back to groups">
-          <ArrowLeft size={18} />
-        </Link>
         <h2>{group ? groupDisplayName(group) : "Chat"}</h2>
         {group && <InviteCode code={group.inviteCode} />}
       </header>

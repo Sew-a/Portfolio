@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Sevak Avetisyan's personal portfolio. Despite the folder/package name (`my-nextjs-app` / `next-gig`), this is **not a Next.js app**: it is a Vite 8 + React 18 SPA using React Router 7. `README.md` and `Doc.md` still describe the old Next.js/App Router/Prisma setup and are outdated. Trust `package.json`, `vite.config.mts`, and `src/App.tsx` instead.
+Sevak Avetisyan's personal portfolio. Despite the folder/package name (`my-nextjs-app` / `next-gig`), this is **not a Next.js app**: it is a Vite 8 + React 18 SPA using React Router 7. `README.md` (mirrored in `Doc.md`) documents the pages, features, architecture and deployment. Keep both in sync when they change.
 
 ## Commands
 

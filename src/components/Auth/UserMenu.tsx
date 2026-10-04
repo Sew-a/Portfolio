@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { LogIn, LogOut } from "lucide-react";
+import { LogIn, LogOut, Settings } from "lucide-react";
 import Avatar from "@/src/components/UI/Avatar";
 import { useAuth } from "@/src/hooks/useAuth";
 import { useAuthStore } from "@/src/store/useAuthStore";
@@ -8,6 +8,7 @@ import { useAuthStore } from "@/src/store/useAuthStore";
 const UserMenu: React.FC = () => {
   const user = useAuthStore((s) => s.user);
   const openAuthModal = useAuthStore((s) => s.openAuthModal);
+  const openSettings = useAuthStore((s) => s.openSettings);
   const { signOut } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -48,6 +49,17 @@ const UserMenu: React.FC = () => {
             <strong>{user.username}</strong>
             <span>{user.email}</span>
           </div>
+          <button
+            role="menuitem"
+            className="user-menu__item"
+            onClick={() => {
+              setIsOpen(false);
+              openSettings();
+            }}
+          >
+            <Settings size={14} />
+            Settings
+          </button>
           <button
             role="menuitem"
             className="user-menu__item"

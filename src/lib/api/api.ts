@@ -10,6 +10,7 @@ import {
   messageSchema,
   type SignInPayload,
   type SignUpPayload,
+  type UpdateProfilePayload,
 } from "./schemas";
 
 const jsonBody = (body: unknown): RequestInit => ({
@@ -47,6 +48,19 @@ export const signIn = (payload: SignInPayload) =>
 
 // ─── User ────────────────────────────────────────
 export const getMe = () => authedRequest("/users/me", chatUserSchema);
+
+export const updateProfile = (payload: UpdateProfilePayload) =>
+  authedRequest("/users/me", chatUserSchema, {
+    method: "PATCH",
+    ...jsonBody(payload),
+  });
+
+/** Uploads an image file and sets it as the avatar. Returns the updated profile. */
+export const uploadAvatar = (file: File) => {
+  const body = new FormData();
+  body.append("file", file);
+  return authedRequest("/users/me/avatar", chatUserSchema, { method: "POST", body });
+};
 
 // ─── Groups ──────────────────────────────────────
 export const getGroups = () => authedRequest("/groups", z.array(groupSchema));

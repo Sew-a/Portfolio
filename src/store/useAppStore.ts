@@ -39,4 +39,6 @@ export const applyThemeClass = (theme: Theme) => {
   document
     .querySelector(".main-theme-wrapper")
     ?.classList.toggle("light-theme", theme === "light");
+  // The page scrollbar lives on <html>, outside the wrapper, so it needs the theme too.
+  document.documentElement.dataset.theme = theme;
 };

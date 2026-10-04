@@ -12,8 +12,8 @@ export default function Homepage() {
   return (
     <main className="portfolio-home">
       <Seo
-        title="Sevak Avetisyan — Software Engineer"
-        description="Portfolio of Sevak Avetisyan — Software Engineer specializing in React, Micro-frontends, and scalable component architectures."
+        title="Sevak Avetisyan — Frontend Engineer"
+        description="Frontend Engineer with 5+ years building web apps at scale at Picsart (150M+ users). React, TypeScript, micro-frontends, plus full-stack NestJS and PostgreSQL."
       />
       <HeroSection />
       <FeaturedWorkSection />

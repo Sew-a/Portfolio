@@ -1,6 +1,5 @@
 export const HERO_DATA = {
   name: "I'm Sevak",
-  title: "Software Engineer /",
   accent: "Frontend Engineer",
  summary:
     "5+ years of building web applications at scale, most recently at Picsart, an AI-powered creative platform serving 150M+ users. Focused on frontend architecture, micro-frontends (Module Federation), reusable component libraries, performance, and testing.",

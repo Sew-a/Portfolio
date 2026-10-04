@@ -6,7 +6,7 @@ export default function Playground() {
     <>
       <Seo
         title="Playground — Sevak Avetisyan"
-        description="Experiment with interactive elements and creative coding."
+        description="Playground: a product search UI built with TanStack Query and debounced filtering."
       />
       <PlaygroundPage />
     </>

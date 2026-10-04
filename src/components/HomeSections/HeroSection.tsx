@@ -16,7 +16,6 @@ export function HeroSection() {
             <motion.h1 className="hero__heading" {...HERO_ANIMATIONS.heading}>
               {HERO_DATA.name}
               <br />
-              {HERO_DATA.title}{" "}
               <span className="hero__accent">{HERO_DATA.accent}</span>
             </motion.h1>
             <motion.p className="hero__sub" {...HERO_ANIMATIONS.sub}>

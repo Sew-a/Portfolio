@@ -46,6 +46,7 @@ export interface AuthState {
   user: ChatUser | null;
   isAuthModalOpen: boolean;
   authMode: AuthMode;
+  isSettingsOpen: boolean;
 
   setSession: (token: string, user: ChatUser) => void;
   setUser: (user: ChatUser) => void;
@@ -53,6 +54,8 @@ export interface AuthState {
   openAuthModal: (mode?: AuthMode) => void;
   closeAuthModal: () => void;
   setAuthMode: (mode: AuthMode) => void;
+  openSettings: () => void;
+  closeSettings: () => void;
 }
 
 // ─── Chat store ──────────────────────────────────
@@ -67,5 +70,7 @@ export interface ChatState {
   setMessages: (groupId: string, messages: ChatMessage[], hasMore: boolean) => void;
   prependMessages: (groupId: string, messages: ChatMessage[], hasMore: boolean) => void;
   addMessage: (message: ChatMessage) => void;
+  /** Refreshes the author snapshot (name, avatar) on a user's already-loaded messages. */
+  updateMessageAuthor: (user: ChatMessage["user"]) => void;
   reset: () => void;
 }

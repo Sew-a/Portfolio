@@ -1,10 +1,10 @@
 import { paths } from "@/src/routes/mainRoutes";
 
 export const FOOTER_NAV = [
-  { label: "Home", href: paths.home },
+  { label: "Main", href: paths.home },
   { label: "Work", href: paths.work },
   { label: "Demos", href: paths.demos },
-  { label: "Résumé", href: paths.resume },
+  { label: "Chat App", href: paths.chat },
 ];
 
 export const FOOTER_CONTACT = [

@@ -118,6 +118,122 @@
   }
 }
 
+// ── Avatar picker ──
+.avatar-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.7rem;
+    background: none;
+    border: 1px solid var(--theme-border);
+    border-radius: $border-radius-md;
+    color: var(--theme-text-secondary);
+    font-size: $fs-micro;
+    font-weight: $fw-semibold;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      color: var(--theme-accent);
+      border-color: var(--theme-accent);
+    }
+
+    &--danger:hover:not(:disabled) {
+      color: $accent-red;
+      border-color: $accent-red;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__hint {
+    flex-basis: 100%;
+    font-size: $fs-micro;
+    font-weight: $fw-regular;
+    color: var(--theme-text-muted);
+  }
+
+  &__error {
+    flex-basis: 100%;
+    font-size: $fs-micro;
+    color: $accent-red;
+  }
+}
+
+// ── Settings popup ──
+.settings-section {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--theme-border);
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &__title {
+    margin-bottom: 0.75rem;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+  }
+
+  &__row {
+    display: flex;
+    gap: 0.5rem;
+
+    input {
+      flex: 1;
+      min-width: 0;
+      padding: 0.6rem 0.75rem;
+      background-color: var(--theme-bg);
+      border: 1px solid var(--theme-border);
+      border-radius: $border-radius-md;
+      color: var(--theme-text);
+      font-size: $fs-sm;
+      outline: none;
+
+      &:focus {
+        border-color: var(--theme-accent);
+      }
+    }
+
+    .auth-form__submit {
+      margin-top: 0;
+      padding: 0 1rem;
+    }
+  }
+
+  &__hint {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: $fs-micro;
+    color: var(--theme-text-muted);
+  }
+
+  &__status {
+    margin-top: 0.75rem;
+    font-size: $fs-sm;
+    color: var(--theme-text-secondary);
+
+    &--ok {
+      color: var(--theme-accent);
+    }
+  }
+}
+
 // ── Header user menu ──
 .user-menu {
   position: relative;

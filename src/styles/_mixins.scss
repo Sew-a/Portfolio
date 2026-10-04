@@ -134,3 +134,32 @@ $slant: 6vw;
   background-image: radial-gradient(circle, $color 1px, transparent 1px);
   background-size: $spacing $spacing;
 }
+
+// Thin scrollbar in the site palette (follows light/dark via --theme-* vars).
+// The page root sits outside .main-theme-wrapper, so it passes --scrollbar-* vars instead.
+@mixin themed-scrollbar(
+  $thumb: var(--theme-border),
+  $thumb-hover: var(--theme-accent),
+  $size: 6px
+) {
+  scrollbar-width: thin;
+  scrollbar-color: $thumb transparent;
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb;
+    border-radius: 999px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $thumb-hover;
+  }
+}

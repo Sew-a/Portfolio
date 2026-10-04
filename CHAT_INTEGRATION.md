@@ -69,10 +69,17 @@ Backend: `https://chat-app-production-79fb.up.railway.app`
 
 ---
 
+## ✅ Added later
+
+- **Avatar upload.** Sign-up has a picture picker (upload from device). The backend gained `POST /api/users/me/avatar`.
+- **Settings.** The account menu has Settings (change or remove avatar, change username) and Sign out.
+- **Chat sidebar.** `/chat/:groupId` shows every group you're in on the left, with the open one highlighted.
+
+---
+
 ## 🔜 Remaining / not implemented
 
 - **Image messages (upload).** `POST /groups/:id/messages/image` + `send_message { imageUrl }` isn't wired into the composer yet. Received images already render.
-- **Profile editing.** `PATCH /api/users/me` (username / avatar) has no UI yet.
 - **Optimistic sending and delivery state.** A message appears when the server broadcasts `new_message` back. There's no pending or failed indicator.
 - **Unread counts / notifications** for groups other than the one that's open.
 - **Leaving a group / member list.** The API doesn't offer these yet.

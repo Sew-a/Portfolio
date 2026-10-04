@@ -6,3 +6,7 @@ export const AUTH_TABS: { mode: AuthMode; label: string; title: string }[] = [
 ];
 
 export const PASSWORD_MIN_LENGTH = 8;
+
+// Mirrors the backend UpdateProfileDto limits.
+export const USERNAME_MIN_LENGTH = 2;
+export const USERNAME_MAX_LENGTH = 32;

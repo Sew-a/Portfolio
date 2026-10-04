@@ -61,6 +61,12 @@ export interface SignUpPayload {
   avatarUrl?: string;
 }
 
+export interface UpdateProfilePayload {
+  username?: string;
+  /** null removes the avatar. */
+  avatarUrl?: string | null;
+}
+
 export interface SignInPayload {
   email: string;
   password: string;

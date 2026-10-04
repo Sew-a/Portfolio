@@ -4,7 +4,7 @@ import Header from "@/src/components/Header";
 import FollowSection from "@/src/components/FollowSection";
 import Footer from "@/src/components/Footer";
 import FixedCharacter from "@/src/components/FixedCharacter";
-import { AuthModal } from "@/src/components/Auth";
+import { AuthModal, SettingsModal } from "@/src/components/Auth";
 import { useScrollToTop } from "@/src/hooks/useScrollToTop";
 import { useThemeSync } from "@/src/hooks/useThemeSync";
 import { useAuthSession } from "@/src/hooks/useAuthSession";
@@ -19,6 +19,7 @@ export default function LayoutWrapper({
   const { pathname } = useLocation();
 
   const isAuthModalOpen = useAuthStore((s) => s.isAuthModalOpen);
+  const isSettingsOpen = useAuthStore((s) => s.isSettingsOpen);
   const showCharacter = !CHARACTER_HIDDEN_ROUTES.some(
     (route) => pathname === route || pathname.startsWith(`${route}/`),
   );
@@ -51,6 +52,7 @@ export default function LayoutWrapper({
       </div>
       {showCharacter && <FixedCharacter />}
       <AnimatePresence>{isAuthModalOpen && <AuthModal />}</AnimatePresence>
+      <AnimatePresence>{isSettingsOpen && <SettingsModal />}</AnimatePresence>
     </div>
   );
 }
