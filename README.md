@@ -50,7 +50,7 @@ The animated character (bottom-right) is hidden on `/demos` and `/chat` so it do
 | Quality | ESLint 9 (flat config), `tsc --noEmit`, GitHub Actions CI |
 
 Related repositories:
-- **Chat backend:** [Sew-a/Chat-app](https://github.com/Sew-a/Chat-app). NestJS 12, Prisma + PostgreSQL, Socket.io, Passport JWT, Cloudflare R2 for images, deployed on Railway.
+- **Chat backend:** [Sew-a/Chat-app](https://github.com/Sew-a/Chat-app). NestJS 12, Prisma + PostgreSQL, Socket.io, Passport JWT, a private Railway Bucket for images, deployed on Railway.
 - **Canvas remote:** [Sew-a/micro-canvas-app](https://github.com/Sew-a/micro-canvas-app). React, Konva, Zustand, exposes `./DemosApp` from `remoteEntry.js`.
 
 ---
@@ -154,7 +154,6 @@ src/
 1. `npm ci`, `npm run lint`, `npm run typecheck`, `npm run build`, then upload `dist/` as an artifact.
 2. On pushes to `main` only: build again and deploy with `railway up --ci`. This needs a `RAILWAY_TOKEN` repository secret (a Railway **project** token).
 
-`wrangler.jsonc` also configures `dist/` as a Cloudflare static-assets deployment with single-page-app fallback.
 
 The chat backend and the canvas remote are deployed separately from their own repositories.
 

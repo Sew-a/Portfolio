@@ -19,7 +19,6 @@ npm run preview    # serve dist/
 
 There is no test runner configured. CI (`.github/workflows/`) runs `npm ci`, then lint, typecheck and build on pushes and PRs to `main`, and deploys `main` with `railway up`. `.npmrc` sets `legacy-peer-deps=true`, which `npm ci` depends on.
 
-Hosting: `wrangler.jsonc` serves `dist/` as static assets with SPA fallback (Cloudflare).
 
 ## Architecture
 

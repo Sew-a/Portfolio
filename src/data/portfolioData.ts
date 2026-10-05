@@ -141,7 +141,7 @@ export const PROJECTS: Project[] = [
       "Zustand",
       "Zod",
       "Passport JWT",
-      "Cloudflare R2",
+      "Railway Buckets",
       "Railway",
     ],
     highlights: [
@@ -188,7 +188,7 @@ export const PROJECTS: Project[] = [
       },
       {
         title: "Image uploads (backend)",
-        desc: "Multipart upload to Cloudflare R2 with a MIME whitelist, a 10 MB cap, and server-side file extensions.",
+        desc: "Multipart upload to a private Railway Bucket, served back through the API, with a MIME whitelist, a 10 MB cap, and server-side file extensions.",
       },
       {
         title: "Deployment",

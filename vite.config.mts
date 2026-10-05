@@ -6,8 +6,7 @@ import { federation } from "@module-federation/vite";
 const root = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig(({ mode }) => {
-  // Cloudflare Pages injects env vars directly into process.env
-  // Also support loadEnv for local development
+  // Hosting injects env vars into process.env; loadEnv covers local .env files
   const chatApiUrl = (process.env.VITE_CHAT_API_URL || loadEnv(mode, root).VITE_CHAT_API_URL || "https://chat-app-production-79fb.up.railway.app").replace(/\/+$/, "");
   const remoteDemosUrl = process.env.VITE_REMOTE_DEMOS_URL || loadEnv(mode, root).VITE_REMOTE_DEMOS_URL || "http://localhost:3001/remoteEntry.js";
 
