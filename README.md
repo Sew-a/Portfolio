@@ -1,6 +1,6 @@
 # Sevak Avetisyan — Portfolio
 
-Personal portfolio of **Sevak Avetisyan, Frontend Engineer** (5+ years, most recently at Picsart, a 150M+ user creative platform).
+Personal portfolio of **Sevak Avetisyan, Senior Frontend Engineer** (5+ years, most recently at Picsart, a 150M+ user creative platform).
 
 Besides presenting experience and projects, the site is itself a working showcase. It's a **Module Federation host** that loads a whiteboard micro-frontend at runtime, and it ships the **React client of a real-time group chat** backed by a NestJS + Socket.io API.
 
@@ -12,7 +12,7 @@ Besides presenting experience and projects, the site is itself a working showcas
 
 | Route | Page | What it shows |
 | --- | --- | --- |
-| `/` | Home | Hero with an open-to-work line, featured work grid, experience timeline, approach, and the "Technologies I work with" grid |
+| `/` | Home | Hero with an open-to-work line and a Download CV button, featured work grid, experience timeline, approach, and the "Technologies I work with" grid. The fixed "Contact me" rail on the right opens a panel with email, LinkedIn and GitHub on hover or click |
 | `/work` | Work | Case-study cards, expertise cards (Full-stack, Game Dev, AI), project gallery, testimonials |
 | `/work/micro-canvas` | Case study | Micro Canvas: Miro-like whiteboard shipped as a Module Federation remote |
 | `/work/chat-app` | Case study | Real-time Group Chat: React client + NestJS / Socket.io / PostgreSQL backend |

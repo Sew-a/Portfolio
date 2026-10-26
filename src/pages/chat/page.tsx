@@ -57,7 +57,7 @@ export default function ChatPage() {
   return (
     <main className="chat-page">
       <Seo
-        title="Chat — Sevak Avetisyan"
+        title="Chat — Sevak Avetisyan, Senior Frontend Engineer"
         description="Real-time group chat demo: sign up, create a group or join one with an invite code. React client with a NestJS + Socket.io backend."
       />
       <h1 className="chat-page__title">Chat</h1>

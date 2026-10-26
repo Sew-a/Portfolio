@@ -299,6 +299,7 @@ html {
 
   .hero__heading { color: #18181b; }
   .hero__accent { color: var(--theme-accent); }
+  .hero__tag { color: var(--theme-accent); border-color: var(--theme-border); }
   .hero__sub { color: var(--theme-text-secondary); }
   .hero__heading::after { background-color: var(--theme-accent); opacity: 0.4; }
   .portfolio-home { color: var(--theme-text); }

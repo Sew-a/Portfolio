@@ -13,7 +13,7 @@ export default function Work() {
   return (
     <div className="pages-spacing">
       <Seo
-        title="Work — Sevak Avetisyan"
+        title="Work — Sevak Avetisyan, Senior Frontend Engineer"
         description="Case studies by Sevak Avetisyan: a Module Federation whiteboard, a real-time NestJS + Socket.io group chat, and an AI agents platform."
       />
       <ProjectsHero />

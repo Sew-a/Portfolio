@@ -1,8 +1,9 @@
 export const HERO_DATA = {
   name: "I'm Sevak",
-  accent: "Frontend Engineer",
- summary:
-    "5+ years of building web applications at scale, most recently at Picsart, an AI-powered creative platform serving 150M+ users. Focused on frontend architecture, micro-frontends (Module Federation), reusable component libraries, performance, and testing.",
+  accent: "Senior Frontend Engineer",
+  availability: "Open to remote roles · EMEA or worldwide",
+  summary:
+    "5+ years of building web applications at scale, most recently at Picsart, an AI-powered creative platform serving 150M+ users. Focused on frontend architecture, micro-frontends (Module Federation), reusable component libraries, performance and testing. Open to remote roles in EMEA or worldwide.",
   email: "sevavetisyan97@gmail.com",
   phone: "+374 41 080497",
   linkedin: "https://www.linkedin.com/in/sevak-avetisyan-arm/",
@@ -293,6 +294,11 @@ export type FeaturedItem = {
   accent: string;
   href?: string;
   comingSoon?: boolean;
+  tags: string[];
+  /** One measurable result shown under the title. */
+  result: string;
+  /** Omitted for internal Picsart work that has no public demo or repo. */
+  links?: { live?: string; repo?: string };
 };
 
 export const FEATURED_WORK: FeaturedItem[] = [
@@ -303,6 +309,10 @@ export const FEATURED_WORK: FeaturedItem[] = [
     image: PROJECTS[0].image,
     accent: "#00f0ff",
     href: "/work/micro-canvas",
+    tags: ["React", "TypeScript", "Vite", "Module Federation", "Konva.js"],
+    result:
+      "Miro-like whiteboard shipped as an independent module and loaded at runtime. LCP 1.50s, CLS 0.00, INP 64ms.",
+    links: PROJECTS[0].links,
   },
   {
     slug: "chat-app",
@@ -311,6 +321,10 @@ export const FEATURED_WORK: FeaturedItem[] = [
     image: PROJECTS[1].image,
     accent: "#ff2d95",
     href: "/work/chat-app",
+    tags: ["React", "NestJS", "Socket.io", "PostgreSQL", "Prisma"],
+    result:
+      "Sign in, create a group, share the invite code, and only people with the code can join. Live updates over WebSockets.",
+    links: PROJECTS[1].links,
   },
   {
     slug: "ai-agents",
@@ -319,14 +333,20 @@ export const FEATURED_WORK: FeaturedItem[] = [
     image: PROJECTS[2].image,
     accent: "#a855f7",
     href: "/work/ai-agents",
+    tags: ["Next.js 16", "React 19", "Cloudflare"],
+    result:
+      "11 pages on prompts, agents and RAG, with client-side search and a comparison of 9 open-source coding agents.",
+    links: PROJECTS[2].links,
   },
   {
-    slug: "Google Picker micro-frontend",
+    slug: "google-picker",
     title: "Google Picker micro-frontend",
     tagline: "Google Drive file picker embedded as micro-frontend",
     image: "https://res.cloudinary.com/dlggumsot/image/upload/v1779292516/MyProject2_dvlxy8.png",
     accent: "#00f0ff",
     comingSoon: true,
+    tags: ["React", "Module Federation", "Google OAuth", "Google APIs"],
+    result: "Google Drive import inside the editor, reused across 4 teams at Picsart.",
   },
   {
     slug: "file-system",
@@ -335,10 +355,30 @@ export const FEATURED_WORK: FeaturedItem[] = [
     image: "https://res.cloudinary.com/dlggumsot/image/upload/v1779292518/MyProject3_yzfsbw.png",
     accent: "#a855f7",
     comingSoon: true,
+    tags: ["React", "TypeScript"],
+    result:
+      "About 15 reusable components with one interface for sidebar and full-screen use, saving 20 hours per sprint.",
   },
 ];
 
 export const EXPERIENCE = [
+  {
+    company: "Independent and Freelance",
+    location: "Remote",
+    period: "Apr 2026 – Present",
+    companySummary:
+      "Independent frontend work: micro-frontend and real-time products built end to end.",
+    roles: [
+      {
+        title: "Senior Frontend Engineer",
+        period: "Apr 2026 – Present",
+        achievements: [
+          "Built Micro Canvas, a Miro-like whiteboard micro-frontend loaded at runtime with Webpack Module Federation (Konva.js), measured at LCP 1.50s, CLS 0.00 and INP 64ms.",
+          "Built a real-time group chat app (React, NestJS, Socket.io, PostgreSQL, Prisma) and a collaborative form builder.",
+        ],
+      },
+    ],
+  },
   {
     company: "Picsart",
     location: "Yerevan, Armenia",

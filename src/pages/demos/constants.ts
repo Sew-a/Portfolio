@@ -64,6 +64,6 @@ export const CHAT_DEMO = {
 };
 
 export const DEMOS_SEO = {
-  title: "Demos — Sevak Avetisyan",
+  title: "Demos — Sevak Avetisyan, Senior Frontend Engineer",
   description: "Live demos: a Konva whiteboard micro-frontend loaded at runtime via Module Federation, and a real-time group chat.",
 };

@@ -13,8 +13,20 @@ import {
   SiStorybook,
   SiNestjs,
   SiPostgresql,
+  SiWebpack,
+  SiVite,
+  SiJest,
+  SiTestinglibrary,
+  SiReactquery,
+  SiTailwindcss,
+  SiSass,
+  SiSocketdotio,
+  SiPrisma,
+  SiClaude,
+  SiCursor,
 } from "react-icons/si";
 import { GiBearFace } from "react-icons/gi";
+import { LuBoxes } from "react-icons/lu";
 
 export const TECH_ICONS: { name: string; Icon: ComponentType<{ size?: number }> }[] = [
   { name: "React", Icon: SiReact },
@@ -31,6 +43,18 @@ export const TECH_ICONS: { name: string; Icon: ComponentType<{ size?: number }> 
   { name: "HTML", Icon: SiHtml5 },
   { name: "CSS", Icon: SiCss },
   { name: "Storybook", Icon: SiStorybook },
+  { name: "Module Federation", Icon: LuBoxes },
+  { name: "Webpack", Icon: SiWebpack },
+  { name: "Vite", Icon: SiVite },
+  { name: "Jest", Icon: SiJest },
+  { name: "React Testing Library", Icon: SiTestinglibrary },
+  { name: "TanStack Query", Icon: SiReactquery },
+  { name: "Tailwind", Icon: SiTailwindcss },
+  { name: "Sass", Icon: SiSass },
+  { name: "Socket.io", Icon: SiSocketdotio },
+  { name: "Prisma", Icon: SiPrisma },
+  { name: "Claude Code", Icon: SiClaude },
+  { name: "Cursor", Icon: SiCursor },
 ];
 
 export const HERO_ANIMATIONS = {

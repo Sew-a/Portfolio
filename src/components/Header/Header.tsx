@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useAppStore } from "@/src/store/useAppStore";
+import { useAuthStore } from "@/src/store/useAuthStore";
+import { paths } from "@/src/routes/mainRoutes";
 import { UserMenu } from "@/src/components/Auth";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useHeaderState } from "./useHeaderState";
@@ -10,6 +12,9 @@ export default function Header() {
   const { pathname, isOpen, isScrolled, toggleMenu } = useHeaderState();
   const theme = useAppStore((s) => s.theme);
   const toggleTheme = useAppStore((s) => s.toggleTheme);
+  const isSignedIn = useAuthStore((s) => !!s.user);
+  // Only the chat needs an account; elsewhere "Sign in" makes the whole site look gated.
+  const showUserMenu = isSignedIn || pathname.startsWith(paths.chat);
 
   return (
     <header
@@ -39,11 +44,11 @@ export default function Header() {
               {theme === "dark" ? <Moon size={16} /> : <Sun size={16} />}
             </span>
           </button>
-          <UserMenu />
+          {showUserMenu && <UserMenu />}
         </div>
 
         <div className="header__mobile-auth">
-          <UserMenu />
+          {showUserMenu && <UserMenu />}
         </div>
 
         <button
@@ -56,4 +61,4 @@ export default function Header() {
       </div>
     </header>
   );
-}
+}

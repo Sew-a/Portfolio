@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
 
     @media (max-width: $tablet) {
         width: 28px;
@@ -19,10 +20,12 @@
     }
 
     &__inner {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
+        pointer-events: auto;
     }
 
     &__line {
@@ -35,11 +38,17 @@
 
 .follow-section__title {
     margin-bottom: 60px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: $font-family-sans;
     font-size: $fs-body;
     font-weight: $fw-semibold;
     transform: rotate(270deg);
     width: 120px;
     height: 20px;
+    white-space: nowrap;
     color: $accent-dark;
 }
 
@@ -59,5 +68,98 @@
         color: $accent-main;
         transform: translateY(-4px) scale(1.1);
         filter: drop-shadow(0 0 8px rgba($accent-main, 0.4));
+    }
+}
+
+// Slides out to the left of the rail.
+.contact-panel {
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 14px);
+    width: max-content;
+    max-width: calc(100vw - 64px);
+    padding: 1rem 1.1rem;
+    background: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    border-radius: $border-radius-md;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(8px, -50%);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+
+    // Invisible bridge over the gap so the pointer can reach the panel without closing it.
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        width: 16px;
+    }
+
+    .follow-section__inner--open & {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, -50%);
+    }
+
+    &__title {
+        display: block;
+        margin-bottom: 0.75rem;
+        font-size: $fs-micro;
+        font-weight: $fw-semibold;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--theme-accent);
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: var(--theme-text);
+
+        &:hover .contact-panel__value {
+            color: var(--theme-accent);
+        }
+    }
+
+    &__icon {
+        display: flex;
+        color: var(--theme-text-muted);
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    &__label {
+        font-size: $fs-micro;
+        color: var(--theme-text-muted);
+    }
+
+    &__value {
+        font-family: $font-family-mono;
+        font-size: $fs-sm;
+        overflow-wrap: anywhere;
+        transition: color 0.15s;
     }
 }

@@ -28,4 +28,13 @@ export const APPROACH_DATA = [
       "I architect applications using Module Federation to split large frontends into independently deployable micro-frontends, isolating logic and ownership boundaries while keeping the end-user experience seamless.",
     tags: ["Module Federation", "Micro-frontends", "Independent Deploys"],
   },
+  {
+    id: "testing",
+    title: "Testing and Performance",
+    problem:
+      "Features ship without tests, and slow pages cost users and search ranking.",
+    solution:
+      "I add unit and integration tests with Jest and React Testing Library, and I track Core Web Vitals and Lighthouse. That took test coverage on two Picsart projects from about 0 to 50–65% in 3–5 weeks, brought the main landing page to a Lighthouse score of 90, and cut production bugs in the core editor by 9.3% through Datadog root-cause analysis.",
+    tags: ["Jest", "React Testing Library", "Lighthouse", "Core Web Vitals", "Datadog"],
+  },
 ];

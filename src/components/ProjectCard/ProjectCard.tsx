@@ -6,6 +6,7 @@ import { paths } from "@/src/routes/mainRoutes";
 import { getProjectIcon } from "@/src/constants/projectIcons";
 import type { Project } from "@/src/data/portfolioData";
 import LiveLink from "./LiveLink";
+import { liveLabel } from "./liveLabel";
 import "./styles.scss";
 
 interface ProjectCardProps {
@@ -37,7 +38,7 @@ export default function ProjectCard({
             <span className="window__dot window__dot--yellow" />
             <span className="window__dot window__dot--green" />
             <span className="window__title">
-              <Code2 size={12} /> {project.slug}.dev
+              <Code2 size={12} /> {liveLabel(project.links.live)}
             </span>
           </div>
           <div className="window__body">
@@ -87,7 +88,7 @@ export default function ProjectCard({
           </Link>
           {project.links.live && (
             <LiveLink href={project.links.live} className="featured-project__link">
-              Live site <ArrowUpRight size={16} />
+              Live demo <ArrowUpRight size={16} />
             </LiveLink>
           )}
           <a
@@ -96,7 +97,7 @@ export default function ProjectCard({
             rel="noreferrer"
             className="featured-project__link"
           >
-            Source <ArrowUpRight size={16} />
+            GitHub <ArrowUpRight size={16} />
           </a>
         </div>
       </div>
