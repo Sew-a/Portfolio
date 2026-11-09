@@ -1,4 +1,4 @@
-import { HeadingText } from "../UI";
+import { HeadingText } from "@/src/components/UI";
 import ExpertiseCard from "./ExpertiseCard";
 import { EXPERTISE_DATA, EXPERTISE_HEADING } from "./constants";
 import "./styles.scss";

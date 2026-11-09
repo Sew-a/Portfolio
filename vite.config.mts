@@ -46,7 +46,6 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 3000,
       proxy: {
-        "/api": "http://localhost:4001",
         // Chat backend REST, proxied in dev to sidestep its CORS allow-list.
         "/chat-api": {
           target: chatApiUrl,

@@ -3,10 +3,10 @@ import Seo from "@/src/components/Seo";
 import { useGroups } from "@/src/hooks/useGroups";
 import type { ChatGroup } from "@/src/lib/api/schemas";
 import { chatGroupPath } from "@/src/routes/mainRoutes";
-import AuthGate from "./components/AuthGate";
-import CreateGroupForm from "./components/CreateGroupForm";
-import GroupList from "./components/GroupList";
-import JoinGroupForm from "./components/JoinGroupForm";
+import AuthGate from "@/src/pages/chat/_components/AuthGate";
+import CreateGroupForm from "@/src/pages/chat/_components/CreateGroupForm";
+import GroupList from "@/src/pages/chat/_components/GroupList";
+import JoinGroupForm from "@/src/pages/chat/_components/JoinGroupForm";
 import "./styles.scss";
 
 function ChatLobby() {

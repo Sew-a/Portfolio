@@ -1,7 +1,7 @@
 import { HeadingText, ActionButton } from "@/src/components/UI";
 import { ACTION_BUTTON_TYPE } from "@/src/components/types";
 import { paths } from "@/src/routes/mainRoutes";
-import { PROJECT_NOT_FOUND } from "../constants";
+import { PROJECT_NOT_FOUND } from "@/src/pages/work/_components/ProjectDetail/constants";
 
 export default function MissingProject() {
   return (

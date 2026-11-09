@@ -6,14 +6,14 @@ import {
 } from "@/src/components/HomeSections";
 import ApproachSection from "@/src/components/ApproachSection";
 import Seo from "@/src/components/Seo";
-import "../../styles.scss";
+import "@/src/styles/sections.scss";
 
 export default function Homepage() {
   return (
     <main className="portfolio-home">
       <Seo
         title="Sevak Avetisyan — Senior Frontend Engineer · React, TypeScript, Micro-frontends"
-        description="Senior Frontend Engineer with 5+ years building web apps at scale at Picsart (150M+ users). React, TypeScript, micro-frontends, plus full-stack NestJS and PostgreSQL. Open to remote roles in EMEA or worldwide."
+        description="Senior Frontend Engineer with 6 years building web apps at scale at Picsart (150M+ users). React, TypeScript, micro-frontends, plus full-stack NestJS and PostgreSQL. Open to remote roles in EMEA or worldwide."
       />
       <HeroSection />
       <FeaturedWorkSection />

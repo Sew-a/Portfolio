@@ -9,8 +9,6 @@ const eslintConfig = tseslint.config(
       "dist/**",
       "node_modules/**",
       "public/**",
-      "src/study/**",
-      ".next/**",
     ],
   },
   {
@@ -38,6 +36,17 @@ const eslintConfig = tseslint.config(
       "@typescript-eslint/ban-ts-comment": "off",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["../*"],
+              message: "Use the @/src/... alias instead of parent-relative imports.",
+            },
+          ],
+        },
+      ],
     },
   }
 );

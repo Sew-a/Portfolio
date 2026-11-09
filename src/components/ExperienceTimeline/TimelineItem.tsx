@@ -1,4 +1,3 @@
-import { Briefcase } from "lucide-react";
 import type { TimelineEntry } from "./types";
 
 type TimelineItemProps = {
@@ -10,7 +9,6 @@ export default function TimelineItem({ entry, side }: TimelineItemProps) {
   return (
     <li className={`timeline-item timeline-item--${side}`}>
       <span className="timeline-item__marker" aria-hidden="true">
-        <Briefcase size={14} strokeWidth={2} />
       </span>
 
       <div className="timeline-item__content">

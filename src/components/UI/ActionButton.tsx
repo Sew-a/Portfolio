@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ACTION_BUTTON_TYPE } from "../types";
+import { ACTION_BUTTON_TYPE } from "@/src/components/types";
 import "./styles.scss";
 
 type ButtonProps = {

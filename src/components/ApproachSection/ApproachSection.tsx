@@ -1,4 +1,4 @@
-import { HeadingText } from "../UI";
+import { HeadingText } from "@/src/components/UI";
 import ApproachCard from "./ApproachCard";
 import { APPROACH_DATA } from "./constants";
 import "./styles.scss";

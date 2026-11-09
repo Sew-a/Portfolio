@@ -5,7 +5,7 @@ import { paths } from "@/src/routes/mainRoutes";
 import type { Project } from "@/src/data/portfolioData";
 import { getProjectIcon } from "@/src/constants/projectIcons";
 import LiveLink from "@/src/components/ProjectCard/LiveLink";
-import { PROJECT_HERO_COPY } from "../constants";
+import { PROJECT_HERO_COPY } from "@/src/pages/work/_components/ProjectDetail/constants";
 
 interface ProjectHeroProps {
   project: Project;

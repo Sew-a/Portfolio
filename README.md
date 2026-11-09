@@ -1,6 +1,6 @@
 # Sevak Avetisyan — Portfolio
 
-Personal portfolio of **Sevak Avetisyan, Senior Frontend Engineer** (5+ years, most recently at Picsart, a 150M+ user creative platform).
+Personal portfolio of **Sevak Avetisyan, Senior Frontend Engineer** 6 years, most recently at Picsart, a 150M+ user creative platform).
 
 Besides presenting experience and projects, the site is itself a working showcase. It's a **Module Federation host** that loads a whiteboard micro-frontend at runtime, and it ships the **React client of a real-time group chat** backed by a NestJS + Socket.io API.
 
@@ -71,7 +71,6 @@ npm run dev          # http://localhost:3000
 | `npm run preview` | Serve the production build |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run lint` | ESLint |
-| `npm run server` | Optional local demo server (`server/server.ts`): Apollo GraphQL on 4000, Express on 4001 |
 
 There is no automated test suite yet.
 
@@ -102,8 +101,10 @@ src/
   lib/api/                Chat API layer: config, zod schemas, REST calls, socket
   hooks/                  useAuth, useAuthSession, useGroups, useChatRoom, useProfileSettings, ...
   store/                  Zustand stores: app (theme), auth (session + popups), chat (groups, messages)
-  styles/                 Design tokens (_variables), mixins (_mixins), global and section styles
+  styles/                 Tokens (_variables), mixins (_mixins), main.scss (global), sections.scss (shared page sections)
 ```
+
+Imports always use the `@/src/...` alias; ESLint rejects parent-relative (`../`) imports.
 
 **Content is data-driven.** Hero, experience, résumé, skills, projects and featured work all live in `src/data/portfolioData.ts`. The `EXPERIENCE` array feeds both the home timeline and the résumé, and `PROJECTS` feeds the work cards and the case-study pages. Some copy lives in `components/<Section>/constants.ts`. When updating personal details, keep them consistent with LinkedIn (titles, dates, metrics).
 

@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import "./styles.scss";
 
 const CharacterAnimation = lazy(
-  () => import("@/src/components/Sidebar/CharacterAnimation"),
+  () => import("./CharacterAnimation"),
 );
 
 export default function FixedCharacter() {

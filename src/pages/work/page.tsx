@@ -5,7 +5,7 @@ import Testimonials from "@/src/components/Testimonials";
 import ExpertiseSection from "@/src/components/ExpertiseSection/ExpertiseSection";
 import Seo from "@/src/components/Seo";
 import { getGalleryImages } from "@/src/utils/gallery";
-import "../../styles.scss";
+import "@/src/styles/sections.scss";
 
 export default function Work() {
   const images = getGalleryImages();

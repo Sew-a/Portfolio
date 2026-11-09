@@ -1,4 +1,4 @@
-import { HeadingText } from "../UI";
+import { HeadingText } from "@/src/components/UI";
 import { useWindowSize } from "@/src/hooks/useWindowSize";
 import { useImagePopup } from "@/src/hooks/useImagePopup";
 import type { GalleryImage } from "@/src/utils/gallery";

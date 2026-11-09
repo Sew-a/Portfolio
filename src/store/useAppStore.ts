@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import type { AppState, Theme } from "./types";
-import { resolveUpdate } from "./utils";
 
 const THEME_KEY = "theme";
 
@@ -14,21 +13,8 @@ const readSavedTheme = (): Theme => {
 };
 
 export const useAppStore = create<AppState>()((set) => ({
-  imageFiles: [],
-  currentFile: "AboutMe.tsx",
-  isHacked: false,
-  isLoading: false,
   theme: readSavedTheme(),
 
-  setImageFiles: (value) =>
-    set((s) => ({ imageFiles: resolveUpdate(value, s.imageFiles) })),
-  setCurrentFile: (value) =>
-    set((s) => ({ currentFile: resolveUpdate(value, s.currentFile) })),
-  setIsHacked: (value) =>
-    set((s) => ({ isHacked: resolveUpdate(value, s.isHacked) })),
-  setIsLoading: (value) =>
-    set((s) => ({ isLoading: resolveUpdate(value, s.isLoading) })),
-  setTheme: (value) => set((s) => ({ theme: resolveUpdate(value, s.theme) })),
   toggleTheme: () =>
     set((s) => ({ theme: s.theme === "dark" ? "light" : "dark" })),
 }));

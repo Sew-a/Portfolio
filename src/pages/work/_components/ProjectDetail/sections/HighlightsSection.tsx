@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import type { Project } from "@/src/data/portfolioData";
 import ContentSection from "./ContentSection";
-import { SECTION_HEADINGS } from "../constants";
+import { SECTION_HEADINGS } from "@/src/pages/work/_components/ProjectDetail/constants";
 
 interface HighlightsSectionProps {
   project: Project;

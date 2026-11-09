@@ -13,18 +13,14 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./src/*", "./*"],
-      "components/*": ["./src/components/*"],
-      "context/*": ["./src/contexts/*"],
-      "hooks/*": ["./src/hooks/*"],
-      "lib/*": ["./src/lib/*"]
+      "@/src/*": ["./src/*"],
+      "@/*": ["./src/*"]
     }
   },
   "include": [
     "vite.config.mts",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "server/**/*.ts",
     "**/*.mts"
   ],
   "exclude": ["node_modules", "dist"]

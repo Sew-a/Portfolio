@@ -1,5 +1,5 @@
 import Seo from "@/src/components/Seo";
-import DemosExperience from "./components/DemosExperience/DemosExperience";
+import DemosExperience from "@/src/pages/demos/_components/DemosExperience/DemosExperience";
 import { DEMOS_SEO } from "./constants";
 import "./styles.scss";
 

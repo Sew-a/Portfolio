@@ -3,7 +3,7 @@ export const HERO_DATA = {
   accent: "Senior Frontend Engineer",
   availability: "Open to remote roles · EMEA or worldwide",
   summary:
-    "5+ years of building web applications at scale, most recently at Picsart, an AI-powered creative platform serving 150M+ users. Focused on frontend architecture, micro-frontends (Module Federation), reusable component libraries, performance and testing. Open to remote roles in EMEA or worldwide.",
+    "6 years of building web applications at scale, most recently at Picsart, an AI-powered creative platform serving 150M+ users. Focused on frontend architecture, micro-frontends (Module Federation), reusable component libraries, performance and testing. Open to remote roles in EMEA or worldwide.",
   email: "sevavetisyan97@gmail.com",
   phone: "+374 41 080497",
   linkedin: "https://www.linkedin.com/in/sevak-avetisyan-arm/",
@@ -461,7 +461,7 @@ export const RESUME = {
   github: "https://github.com/Sew-a",
   portfolio: "/",
   summary:
-    "Frontend Engineer with 5+ years of building web applications at scale, most recently at Picsart, an AI-powered creative platform serving 150M+ users. Focused on frontend architecture, micro-frontends (Module Federation), reusable component libraries, performance, and testing. Set up 3 production micro-frontends from scratch (Google Picker, Commenting, Storage) and extended 3+ other Module Federation apps, enabling independent releases; built a ~15-component library saving 20 hours per sprint; and reduced production bugs in the core photo editor by 9.3%.",
+    "Frontend Engineer with 6 years of building web applications at scale, most recently at Picsart, an AI-powered creative platform serving 150M+ users. Focused on frontend architecture, micro-frontends (Module Federation), reusable component libraries, performance, and testing. Set up 3 production micro-frontends from scratch (Google Picker, Commenting, Storage) and extended 3+ other Module Federation apps, enabling independent releases; built a ~15-component library saving 20 hours per sprint; and reduced production bugs in the core photo editor by 9.3%.",
   skillGroups: [
     {
       category: "Frontend Development",

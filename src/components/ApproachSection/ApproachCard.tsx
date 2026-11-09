@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { FadeIn } from "../UI";
+import { FadeIn } from "@/src/components/UI";
 import { APPROACH_DATA } from "./constants";
 
 type ApproachItem = (typeof APPROACH_DATA)[number];

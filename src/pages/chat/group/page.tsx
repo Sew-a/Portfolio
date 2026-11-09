@@ -2,10 +2,10 @@ import { Navigate, useParams } from "react-router-dom";
 import Seo from "@/src/components/Seo";
 import { useGroups } from "@/src/hooks/useGroups";
 import { paths } from "@/src/routes/mainRoutes";
-import AuthGate from "../components/AuthGate";
-import ChatRoom from "../components/ChatRoom";
-import ChatSidebar from "../components/ChatSidebar";
-import "../styles.scss";
+import AuthGate from "@/src/pages/chat/_components/AuthGate";
+import ChatRoom from "@/src/pages/chat/_components/ChatRoom";
+import ChatSidebar from "@/src/pages/chat/_components/ChatSidebar";
+import "@/src/pages/chat/styles.scss";
 
 function GroupChat({ groupId }: { groupId: string }) {
   // Loads groups too, so a direct link to /chat/:groupId still gets name + invite code.

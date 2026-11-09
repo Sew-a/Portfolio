@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import type { Project } from "@/src/data/portfolioData";
 import ContentSection from "./ContentSection";
-import { SECTION_HEADINGS } from "../constants";
+import { SECTION_HEADINGS } from "@/src/pages/work/_components/ProjectDetail/constants";
 
 interface OverviewSectionProps {
   project: Project;

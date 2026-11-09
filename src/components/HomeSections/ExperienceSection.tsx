@@ -9,7 +9,7 @@ export function ExperienceSection() {
           <h2 className="experience__title">WORK EXPERIENCE</h2>
           <span className="experience__ornament" aria-hidden="true" />
           <p className="experience__subtitle">
-            5+ years · React · TypeScript · Micro-frontends
+            6 years · React · TypeScript · Micro-frontends
           </p>
         </div>
         <ExperienceTimeline />
