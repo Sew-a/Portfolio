@@ -17,9 +17,11 @@ Besides presenting experience and projects, the site is itself a working showcas
 | `/work/micro-canvas` | Case study | Micro Canvas: Miro-like whiteboard shipped as a Module Federation remote |
 | `/work/chat-app` | Case study | Real-time Group Chat: React client + NestJS / Socket.io / PostgreSQL backend |
 | `/work/ai-agents` | Case study | AI Agents & Prompt Engineering Hub (Next.js 16 on Cloudflare Workers) |
-| `/demos` | Demos | Opens the live **Canvas miniapp** (loaded at runtime) and links to the chat demo |
+| `/work/the-trip` | Case study | The Trip: solo-built top-down neon action game (TypeScript + Canvas 2D, Blender art), demo of an upcoming Unity / C# indie game |
+| `/demos` | Demos | Opens the live **Canvas miniapp** (loaded at runtime) and links to the chat demo and the game |
 | `/chat` | Chat lobby | Sign in, list your groups, create a group or join one with an invite code |
 | `/chat/:groupId` | Chat room | Sidebar with all your groups, live messages, history, copyable invite code |
+| `/game` | Game | **The Trip**: a top-down neon action game in Canvas 2D (house party → corridors and a boss → a dark maze → home). Keyboard and mouse only; small screens get a notice instead |
 | `/resume` | Résumé | Résumé generated from the same data as the home timeline |
 | `/playground` | Playground | Product search UI (TanStack Query, debounced filtering). Not linked in the nav |
 
@@ -32,7 +34,15 @@ Old `/projects` and `/projects/:slug` URLs redirect to `/work`.
 - **Chat room.** Left sidebar with every group you're in. Live messages over Socket.io, "load older" cursor pagination, own messages on the right.
 - **Session handling.** The token is persisted in `localStorage`. An expired token (401) signs you out automatically.
 
-The animated character (bottom-right) is hidden on `/demos` and `/chat` so it doesn't cover the apps.
+### Game features
+- **Five acts, one story.** Chores against a draining "friends satisfaction" bar (the world starts grey and gets colourful as you get high), a corridor walk with a choice between a fight corridor and a dark, quiet one, a three-phase boss (kick shockwave, steam cone, then faster everything), a loneliness scene where the crew drifts away and leaves you on the couch, a dark, buzzing office maze generated per run (footprints show where you've walked, a light leaks from the exit, six shadows wait on the route), a finale, and a last quiet act back home. The ending is implied, not shown, and the end screen links to findahelpline.com.
+- **Conversations.** Branching dialogue with the crew (many lines touch on loneliness), plus small talk with whoever sits nearest when you press E on the couch.
+- **Combat.** A quick knife stab; shadows die in one hit, brutes take two. Dash with i-frames, hit-stop and screen shake, combo scoring and a graded result screen after the fight acts.
+- **Checkpoints.** Dying restarts the current act (or the boss); the reached act is saved in `localStorage` so the start screen offers "Continue".
+- **Art.** Low-poly models in Blender, rendered top-down into a pixel sprite atlas (`public/smoke-sim/`). Source `.blend` and the render script live in `assets-src/smoke-sim/`. If the atlas is missing the game falls back to coloured shapes.
+- **Audio.** Everything is synthesized with the Web Audio API (synthwave loop, drones, SFX); no audio files.
+
+The animated character (bottom-right) is hidden on `/demos`, `/chat` and `/game` so it doesn't cover the apps.
 
 ---
 
@@ -99,8 +109,9 @@ src/
   components/             Shared UI (Header, Footer, LayoutWrapper, Auth, ProjectCard, ...)
   data/                   Site content: portfolioData.ts, footerData.ts, testimonialsData.ts
   lib/api/                Chat API layer: config, zod schemas, REST calls, socket
+  lib/game/               Game engine (no React): fixed-step loop, entities, levels, story steps, renderer, synth audio
   hooks/                  useAuth, useAuthSession, useGroups, useChatRoom, useProfileSettings, ...
-  store/                  Zustand stores: app (theme), auth (session + popups), chat (groups, messages)
+  store/                  Zustand stores: app (theme), auth (session + popups), chat (groups, messages), game (HUD state)
   styles/                 Tokens (_variables), mixins (_mixins), main.scss (global), sections.scss (shared page sections)
 ```
 
@@ -117,6 +128,8 @@ Imports always use the `@/src/...` alias; ESLint rejects parent-relative (`../`)
 - `lib/api/socket.ts` keeps one shared socket per token.
 - `useChatRoom` loads history, rejoins the room after reconnects, and merges live `new_message` events into `useChatStore`.
 - Avatars upload as `multipart/form-data` to `POST /api/users/me/avatar`. At sign-up the account is created first, then the picture is uploaded with the new token.
+
+**Game.** `src/lib/game/engine.ts` owns the canvas, a 60 Hz fixed-step simulation and the Web Audio synth. React (`src/pages/game/_components/`) mounts it, renders the HUD, dialogue and menus from `useGameStore`, and forwards button clicks back to the engine. The story is a data table (`story/steps.ts`), so adding a chore is one entry; dialogue lives in `story/dialogues.ts` (with a `chain()` helper for multi-line scenes) and scripted scenes in `story/scenes.ts`. The Act 4 maze is generated per run in `levels/maze.ts` (depth-first search plus a few knocked-through dead ends) and built into walls in `levels/labyrinth.ts`. In dev, `window.__smokeSim` exposes the engine and F2 skips the current step.
 
 **SEO.** `index.html` holds default title, description, Open Graph and Twitter tags. Each page renders `<Seo title description />`, which updates the title, description, `og:*` and `twitter:*` tags on navigation.
 

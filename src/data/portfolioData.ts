@@ -32,6 +32,88 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: "the-trip",
+    title: "The Trip",
+    tagline: "Top-down neon action game, a playable demo of an upcoming Unity indie title",
+    summary:
+      "A story-driven top-down action game I designed and built on my own: a house party that turns into a trip through shadow corridors, a boss fight and a maze with no way out, ending quietly back home. It runs in the browser on a custom TypeScript + Canvas 2D engine. This is the demo version; the full indie game is being built in Unity and C#.",
+    description:
+      "The Trip is a five-act narrative game playable right here on the portfolio. The engine is plain TypeScript with no game framework: a 60 Hz fixed-step loop, circle-vs-wall collision, a camera with screen shake, particles and a sprite renderer on Canvas 2D. React only mounts the canvas and draws the HUD, dialogue and menus from a Zustand store. The characters and props are low-poly models I made in Blender and rendered top-down into a pixel sprite atlas with a Python script, and every sound and the synthwave soundtrack are synthesized live with the Web Audio API. I used Claude as an AI pair programmer throughout. The browser build is a demo to test the story, pacing and combat before the full game in Unity and C#.",
+    role: "Solo developer · Design, code & art",
+    year: "2026",
+    status: "Demo",
+    image:
+      "https://res.cloudinary.com/dlggumsot/image/upload/v1794400870/Screenshot_2026-11-11_163622_sm9ste.webp",
+    imageAlt: "The Trip: neon top-down view of the house party with the player, the crew and the task list",
+    accent: "#ff007f",
+    icon: "Gamepad2",
+    links: {
+      live: "/game",
+      repo: "https://github.com/Sew-a/next-gig",
+    },
+    techStack: [
+      "TypeScript",
+      "Canvas 2D",
+      "Web Audio API",
+      "React",
+      "Zustand",
+      "Blender",
+      "Python",
+      "Claude",
+    ],
+    highlights: [
+      "Built solo: game design, story, engine code and Blender art",
+      "Five acts: party chores, shadow corridors, a three-phase boss, a generated maze and a quiet ending",
+      "Custom TypeScript engine with a 60 Hz fixed-step loop on Canvas 2D, no game framework",
+      "Low-poly Blender models rendered top-down into a pixel sprite atlas",
+      "Playable demo; the full indie game is in development in Unity and C#",
+    ],
+    architecture: [
+      {
+        title: "Engine without React in the loop",
+        desc: "The engine owns the canvas, input, a 60 Hz fixed-step simulation and rendering. React mounts it once and renders the HUD, dialogue and menus from a Zustand store, so the game loop never re-renders components.",
+      },
+      {
+        title: "Story as data",
+        desc: "Every chore and story beat is one entry in a steps table with its task text, target hotspot and interaction. Dialogue trees and scripted scenes live in their own modules, so adding content doesn't touch engine code.",
+      },
+      {
+        title: "Blender to sprite atlas pipeline",
+        desc: "A Python script builds the low-poly models in Blender, renders each one top-down with a toon shader and outlines, downscales it to crisp pixels and packs everything into one atlas.png + atlas.json.",
+      },
+      {
+        title: "Synthesized audio",
+        desc: "No audio files: the synthwave loop, ambient drones and all sound effects are generated at runtime with the Web Audio API.",
+      },
+    ],
+    features: [
+      {
+        title: "Five-act story",
+        desc: "A house party where the world starts grey and turns colourful, a corridor walk with a choice of paths, a boss, a loneliness scene, a maze and a last act back home.",
+      },
+      {
+        title: "Combat",
+        desc: "Knife stab, dash with invincibility frames, hit-stop and screen shake, combo scoring and a graded result screen after fight acts.",
+      },
+      {
+        title: "Boss fight",
+        desc: "A three-phase boss with a kick shockwave, a steam cone and a faster final phase.",
+      },
+      {
+        title: "Generated maze",
+        desc: "A dark office maze generated every run with depth-first search, footprints showing where you've walked and shadows waiting on the route.",
+      },
+      {
+        title: "Branching dialogue",
+        desc: "Conversations with the crew with numbered choices, plus small talk with whoever sits next to you on the couch.",
+      },
+      {
+        title: "Checkpoints",
+        desc: "Dying restarts the current act. The reached act is saved in localStorage so you can continue later.",
+      },
+    ],
+  },
+  {
     slug: "micro-canvas",
     title: "Micro Canvas",
     tagline: "Miro-like whiteboard shipped as a Module Federation remote",
@@ -303,40 +385,52 @@ export type FeaturedItem = {
 
 export const FEATURED_WORK: FeaturedItem[] = [
   {
+    slug: "the-trip",
+    title: "The Trip",
+    tagline: "Top-down neon action game, playable demo",
+    image: PROJECTS[0].image,
+    accent: "#ff007f",
+    href: "/work/the-trip",
+    tags: ["TypeScript", "Canvas 2D", "Web Audio", "Blender", "Claude"],
+    result:
+      "Solo-built five-act story game with a boss fight and a generated maze. Demo of an indie game coming to Unity and C#.",
+    links: PROJECTS[0].links,
+  },
+  {
     slug: "micro-canvas",
     title: "Micro Canvas",
     tagline: "Miro-like whiteboard loaded at runtime via Module Federation",
-    image: PROJECTS[0].image,
+    image: PROJECTS[1].image,
     accent: "#00f0ff",
     href: "/work/micro-canvas",
     tags: ["React", "TypeScript", "Vite", "Module Federation", "Konva.js"],
     result:
       "Miro-like whiteboard shipped as an independent module and loaded at runtime. LCP 1.50s, CLS 0.00, INP 64ms.",
-    links: PROJECTS[0].links,
+    links: PROJECTS[1].links,
   },
   {
     slug: "chat-app",
     title: "Real-time Group Chat",
     tagline: "React + NestJS / Socket.io group chat",
-    image: PROJECTS[1].image,
+    image: PROJECTS[2].image,
     accent: "#ff2d95",
     href: "/work/chat-app",
     tags: ["React", "NestJS", "Socket.io", "PostgreSQL", "Prisma"],
     result:
       "Sign in, create a group, share the invite code, and only people with the code can join. Live updates over WebSockets.",
-    links: PROJECTS[1].links,
+    links: PROJECTS[2].links,
   },
   {
     slug: "ai-agents",
     title: "AI Agents & Prompt Engineering Hub",
     tagline: "Prompt engineering, agents & RAG made copyable",
-    image: PROJECTS[2].image,
+    image: PROJECTS[3].image,
     accent: "#a855f7",
     href: "/work/ai-agents",
     tags: ["Next.js 16", "React 19", "Cloudflare"],
     result:
       "11 pages on prompts, agents and RAG, with client-side search and a comparison of 9 open-source coding agents.",
-    links: PROJECTS[2].links,
+    links: PROJECTS[3].links,
   },
   {
     slug: "google-picker",

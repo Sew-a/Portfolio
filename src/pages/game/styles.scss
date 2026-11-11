@@ -1,0 +1,604 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+// The game screen keeps its own neon palette in both site themes;
+// only the surrounding page chrome (controls list) follows --theme-* vars.
+$game-pink: #ff007f;
+$game-cyan: #00f3ff;
+$game-yellow: #fffb00;
+$game-purple: #bd00ff;
+$game-panel: rgba(10, 10, 25, 0.78);
+$game-text: #e0e0ff;
+
+.game-page {
+  @include content-wrapper;
+  padding-top: 96px;
+  padding-bottom: 48px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  &__frame {
+    position: relative;
+    width: min(100%, calc((100vh - 210px) * 4 / 3));
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--theme-border);
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    background: #05050a;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(0, 243, 255, 0.08);
+    color: $game-text;
+    font-family: $font-family-mono;
+    user-select: none;
+
+    &--playing .game__canvas {
+      cursor: crosshair;
+    }
+  }
+
+  &__canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+  }
+
+  &__crt {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%),
+      radial-gradient(circle, transparent 55%, rgba(0, 0, 0, 0.7) 100%);
+    background-size: 100% 4px, 100% 100%;
+  }
+
+  &__controls {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    font-size: $fs-micro;
+    color: var(--theme-text-secondary);
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__key {
+    padding: 2px 8px;
+    border: 1px solid var(--theme-border);
+    border-radius: $border-radius-sm;
+    font-family: $font-family-mono;
+    font-size: $fs-micro;
+    color: var(--theme-accent);
+  }
+
+  &__mobile {
+    max-width: 420px;
+    padding: 32px 24px;
+    border: 1px dashed var(--theme-border);
+    border-radius: $border-radius-lg;
+    text-align: center;
+    color: var(--theme-text-secondary);
+    font-size: $fs-body;
+  }
+}
+
+// ─── HUD ─────────────────────────────────────────────────
+
+.game-hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  font-family: $font-family-mono;
+
+  &__left,
+  &__right {
+    position: absolute;
+    top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__left {
+    left: 14px;
+    width: 30%;
+  }
+
+  &__right {
+    right: 14px;
+    width: 32%;
+    align-items: flex-end;
+  }
+
+  &__panel {
+    width: 100%;
+    padding: 8px 12px;
+    background: $game-panel;
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: $border-radius-md;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.15);
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: $fs-micro;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $game-cyan;
+  }
+
+  &__bar {
+    height: 10px;
+    background: #111122;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  &__fill {
+    height: 100%;
+    background: linear-gradient(90deg, $game-pink, $game-cyan);
+    box-shadow: 0 0 8px $game-cyan;
+    transition: width 0.3s ease;
+
+    &--low {
+      background: $game-pink;
+      animation: game-blink 0.6s steps(2) infinite;
+    }
+
+    &--boss {
+      background: linear-gradient(90deg, #f43f5e, #fb923c);
+      box-shadow: 0 0 8px #f43f5e;
+    }
+  }
+
+  &__hearts {
+    display: flex;
+    gap: 6px;
+  }
+
+  &__heart {
+    width: 16px;
+    height: 16px;
+    background: $game-pink;
+    box-shadow: 0 0 8px $game-pink;
+    clip-path: polygon(50% 100%, 0 40%, 0 15%, 25% 0, 50% 15%, 75% 0, 100% 15%, 100% 40%);
+
+    &--lost {
+      background: #2a2a3a;
+      box-shadow: none;
+    }
+  }
+
+  &__score {
+    font-size: $fs-h3;
+    font-weight: $fw-bold;
+    color: $game-yellow;
+    text-shadow: 0 0 10px rgba(255, 251, 0, 0.5);
+  }
+
+  &__combo {
+    display: block;
+    font-size: $fs-sm;
+    color: $game-pink;
+    text-shadow: 0 0 8px $game-pink;
+  }
+
+  &__toasts {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__toast {
+    padding: 6px 14px;
+    background: rgba(255, 0, 127, 0.85);
+    border: 1px solid $game-pink;
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(255, 0, 127, 0.45);
+    font-size: $fs-micro;
+    font-weight: $fw-bold;
+    color: #fff;
+    text-align: center;
+    animation: game-toast 3.2s ease forwards;
+  }
+
+  &__mute {
+    pointer-events: auto;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    background: $game-panel;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: $border-radius-md;
+    color: $game-text;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $game-cyan;
+      color: $game-cyan;
+    }
+  }
+
+  &__tasks {
+    border-color: rgba(189, 0, 255, 0.35);
+    box-shadow: 0 0 12px rgba(189, 0, 255, 0.2);
+
+    .game-hud__label {
+      color: $game-purple;
+    }
+  }
+
+  &__task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__task {
+    display: flex;
+    gap: 8px;
+    font-size: $fs-micro;
+    line-height: 1.35;
+    color: #8f8fb0;
+
+    &--done {
+      color: rgba(57, 255, 20, 0.6);
+      text-decoration: line-through;
+    }
+
+    &--active {
+      color: $game-text;
+      font-weight: $fw-bold;
+    }
+  }
+
+  &__check {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    margin-top: 2px;
+    border: 1px solid #505070;
+    border-radius: 2px;
+
+    .game-hud__task--done & {
+      background: rgba(57, 255, 20, 0.35);
+      border-color: #39ff14;
+    }
+
+    .game-hud__task--active & {
+      border-color: $game-cyan;
+      box-shadow: 0 0 5px $game-cyan;
+    }
+  }
+
+  &__boss {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    width: 50%;
+    text-align: center;
+
+    .game-hud__label {
+      color: #f43f5e;
+    }
+  }
+
+  &__bar--boss {
+    height: 12px;
+  }
+}
+
+// ─── Dialogue ────────────────────────────────────────────
+
+.game-dialogue {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: min(88%, 680px);
+  padding: 14px 18px;
+  background: rgba(10, 10, 20, 0.92);
+  border: 2px solid $game-cyan;
+  border-radius: $border-radius-xl;
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+
+  &__head {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  &__portrait {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    border: 2px solid $game-cyan;
+    border-radius: $border-radius-lg;
+    image-rendering: pixelated;
+    background: #111122;
+
+    &--initial {
+      display: grid;
+      place-items: center;
+      font-size: $fs-h2;
+      font-weight: $fw-bold;
+      color: $game-yellow;
+    }
+  }
+
+  &__speaker {
+    font-size: $fs-lead;
+    font-weight: $fw-bold;
+    color: $game-yellow;
+    text-shadow: 0 0 8px rgba(255, 251, 0, 0.4);
+  }
+
+  &__text {
+    margin-top: 4px;
+    font-size: $fs-sm;
+    line-height: 1.45;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  &__option {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: $border-radius-md;
+    font-family: $font-family-mono;
+    font-size: $fs-sm;
+    color: #c0c0e0;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s, border-color 0.15s;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(0, 243, 255, 0.15);
+      border-color: $game-cyan;
+      color: #fff;
+      transform: translateX(4px);
+    }
+  }
+
+  &__num {
+    color: $game-cyan;
+    font-weight: $fw-bold;
+  }
+
+  &__hint {
+    display: block;
+    margin-top: 6px;
+    text-align: right;
+    font-size: $fs-micro;
+    color: #606080;
+  }
+}
+
+// ─── Menus ───────────────────────────────────────────────
+
+.game-screen {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(3, 3, 8, 0.82);
+  backdrop-filter: blur(8px);
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: min(86%, 440px);
+    padding: 32px;
+    background: rgba(15, 15, 30, 0.75);
+    border: 1px solid rgba(0, 243, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.15);
+    text-align: center;
+  }
+
+  // Nested so these beat the global `.main-theme-wrapper h1/h2` colour.
+  & &__title {
+    font-size: $fs-h1;
+    font-weight: $fw-bold;
+    line-height: 1;
+    color: $game-cyan;
+    text-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+    margin-bottom: 8px;
+  }
+
+  &__help {
+    font-size: $fs-micro;
+    line-height: 1.5;
+    color: #8f8fb0;
+
+    a {
+      color: $game-cyan;
+      text-decoration: underline;
+    }
+  }
+
+  & &__heading {
+    font-size: $fs-h2;
+    font-weight: $fw-bold;
+    color: $game-cyan;
+    text-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+
+    &--danger {
+      color: $game-pink;
+      text-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
+    }
+
+    &--gold {
+      color: $game-yellow;
+      text-shadow: 0 0 15px rgba(255, 251, 0, 0.6);
+    }
+  }
+
+  &__notice {
+    padding: 12px;
+    background: rgba(255, 0, 127, 0.08);
+    border: 1px dashed $game-pink;
+    border-radius: $border-radius-lg;
+    font-size: $fs-micro;
+    line-height: 1.5;
+    color: #d0c0d0;
+    margin-bottom: 8px;
+  }
+
+  &__tag {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: $fw-bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $game-pink;
+  }
+
+  &__text {
+    font-size: $fs-sm;
+    line-height: 1.5;
+    color: #c0c0e0;
+  }
+
+  &__btn {
+    padding: 12px;
+    background: transparent;
+    border: 2px solid $game-cyan;
+    border-radius: $border-radius-lg;
+    font-family: $font-family-mono;
+    font-size: $fs-body;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $game-cyan;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      background: $game-cyan;
+      color: #000;
+      box-shadow: 0 0 20px $game-cyan;
+    }
+
+    &--ghost {
+      border-width: 1px;
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #c0c0e0;
+      font-size: $fs-sm;
+
+      &:hover,
+      &:focus-visible {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        box-shadow: none;
+      }
+    }
+
+    &--danger {
+      border-color: $game-pink;
+      color: $game-pink;
+
+      &:hover,
+      &:focus-visible {
+        background: $game-pink;
+        box-shadow: 0 0 20px $game-pink;
+      }
+    }
+
+    &--gold {
+      border-color: $game-yellow;
+      color: $game-yellow;
+
+      &:hover,
+      &:focus-visible {
+        background: $game-yellow;
+        box-shadow: 0 0 20px $game-yellow;
+      }
+    }
+  }
+
+  &__grade {
+    font-size: $fs-display;
+    font-weight: $fw-bold;
+    line-height: 1;
+    color: $game-yellow;
+    text-shadow: 0 0 20px rgba(255, 251, 0, 0.6);
+  }
+
+  &__stats {
+    display: grid;
+    gap: 4px;
+    margin: 4px 0 8px;
+    font-size: $fs-sm;
+  }
+
+  &__stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+
+    dt {
+      color: #8f8fb0;
+    }
+
+    dd {
+      font-weight: $fw-bold;
+    }
+  }
+}
+
+@keyframes game-toast {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  8%,
+  88% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes game-blink {
+  50% {
+    opacity: 0.4;
+  }
+}

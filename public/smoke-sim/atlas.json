@@ -1,0 +1,1113 @@
+{
+ "frames": {
+  "player.idle.0": {
+   "x": 660,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "player.walk.0": {
+   "x": 792,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "player.walk.1": {
+   "x": 858,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "player.walk.2": {
+   "x": 924,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "player.walk.3": {
+   "x": 0,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "player.attack.0": {
+   "x": 396,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "player.attack.1": {
+   "x": 462,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "player.attack.2": {
+   "x": 528,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "player.dead.0": {
+   "x": 594,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "player.sit.0": {
+   "x": 726,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.idle.0": {
+   "x": 924,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.walk.0": {
+   "x": 198,
+   "y": 616,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.walk.1": {
+   "x": 264,
+   "y": 616,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.walk.2": {
+   "x": 330,
+   "y": 616,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.walk.3": {
+   "x": 396,
+   "y": 616,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.attack.0": {
+   "x": 660,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.attack.1": {
+   "x": 726,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.attack.2": {
+   "x": 792,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.dead.0": {
+   "x": 858,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.sit.0": {
+   "x": 132,
+   "y": 616,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.panic.0": {
+   "x": 0,
+   "y": 616,
+   "w": 64,
+   "h": 64
+  },
+  "vahe.panic.1": {
+   "x": 66,
+   "y": 616,
+   "w": 64,
+   "h": 64
+  },
+  "karen.idle.0": {
+   "x": 66,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "karen.walk.0": {
+   "x": 330,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "karen.walk.1": {
+   "x": 396,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "karen.walk.2": {
+   "x": 462,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "karen.walk.3": {
+   "x": 528,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "karen.attack.0": {
+   "x": 792,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "karen.attack.1": {
+   "x": 858,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "karen.attack.2": {
+   "x": 924,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "karen.dead.0": {
+   "x": 0,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "karen.sit.0": {
+   "x": 264,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "karen.panic.0": {
+   "x": 132,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "karen.panic.1": {
+   "x": 198,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "grish.idle.0": {
+   "x": 264,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "grish.walk.0": {
+   "x": 528,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "grish.walk.1": {
+   "x": 594,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "grish.walk.2": {
+   "x": 660,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "grish.walk.3": {
+   "x": 726,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "grish.attack.0": {
+   "x": 0,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "grish.attack.1": {
+   "x": 66,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "grish.attack.2": {
+   "x": 132,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "grish.dead.0": {
+   "x": 198,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "grish.sit.0": {
+   "x": 462,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "grish.panic.0": {
+   "x": 330,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "grish.panic.1": {
+   "x": 396,
+   "y": 352,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.idle.0": {
+   "x": 858,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.walk.0": {
+   "x": 132,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.walk.1": {
+   "x": 198,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.walk.2": {
+   "x": 264,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.walk.3": {
+   "x": 330,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.attack.0": {
+   "x": 594,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.attack.1": {
+   "x": 660,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.attack.2": {
+   "x": 726,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.dead.0": {
+   "x": 792,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.sit.0": {
+   "x": 66,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.panic.0": {
+   "x": 924,
+   "y": 418,
+   "w": 64,
+   "h": 64
+  },
+  "petrosian.panic.1": {
+   "x": 0,
+   "y": 484,
+   "w": 64,
+   "h": 64
+  },
+  "shadow.idle.0": {
+   "x": 330,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "shadow.walk.0": {
+   "x": 396,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "shadow.walk.1": {
+   "x": 462,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "shadow.walk.2": {
+   "x": 528,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "shadow.walk.3": {
+   "x": 594,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "shadow.attack.0": {
+   "x": 66,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "shadow.attack.1": {
+   "x": 132,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "shadow.attack.2": {
+   "x": 198,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "shadow.dead.0": {
+   "x": 264,
+   "y": 550,
+   "w": 64,
+   "h": 64
+  },
+  "brute.idle.0": {
+   "x": 440,
+   "y": 260,
+   "w": 80,
+   "h": 80
+  },
+  "brute.walk.0": {
+   "x": 522,
+   "y": 260,
+   "w": 80,
+   "h": 80
+  },
+  "brute.walk.1": {
+   "x": 604,
+   "y": 260,
+   "w": 80,
+   "h": 80
+  },
+  "brute.walk.2": {
+   "x": 686,
+   "y": 260,
+   "w": 80,
+   "h": 80
+  },
+  "brute.walk.3": {
+   "x": 768,
+   "y": 260,
+   "w": 80,
+   "h": 80
+  },
+  "brute.attack.0": {
+   "x": 112,
+   "y": 260,
+   "w": 80,
+   "h": 80
+  },
+  "brute.attack.1": {
+   "x": 194,
+   "y": 260,
+   "w": 80,
+   "h": 80
+  },
+  "brute.attack.2": {
+   "x": 276,
+   "y": 260,
+   "w": 80,
+   "h": 80
+  },
+  "brute.dead.0": {
+   "x": 358,
+   "y": 260,
+   "w": 80,
+   "h": 80
+  },
+  "boss.idle.0": {
+   "x": 130,
+   "y": 0,
+   "w": 128,
+   "h": 128
+  },
+  "boss.walk.0": {
+   "x": 0,
+   "y": 130,
+   "w": 128,
+   "h": 128
+  },
+  "boss.walk.1": {
+   "x": 130,
+   "y": 130,
+   "w": 128,
+   "h": 128
+  },
+  "boss.walk.2": {
+   "x": 260,
+   "y": 130,
+   "w": 128,
+   "h": 128
+  },
+  "boss.walk.3": {
+   "x": 390,
+   "y": 130,
+   "w": 128,
+   "h": 128
+  },
+  "boss.kick.0": {
+   "x": 260,
+   "y": 0,
+   "w": 128,
+   "h": 128
+  },
+  "boss.kick.1": {
+   "x": 390,
+   "y": 0,
+   "w": 128,
+   "h": 128
+  },
+  "boss.kick.2": {
+   "x": 520,
+   "y": 0,
+   "w": 128,
+   "h": 128
+  },
+  "boss.steam.0": {
+   "x": 650,
+   "y": 0,
+   "w": 128,
+   "h": 128
+  },
+  "boss.steam.1": {
+   "x": 780,
+   "y": 0,
+   "w": 128,
+   "h": 128
+  },
+  "boss.dead.0": {
+   "x": 0,
+   "y": 0,
+   "w": 128,
+   "h": 128
+  },
+  "portrait.player": {
+   "x": 814,
+   "y": 130,
+   "w": 96,
+   "h": 96
+  },
+  "portrait.vahe": {
+   "x": 912,
+   "y": 130,
+   "w": 96,
+   "h": 96
+  },
+  "portrait.karen": {
+   "x": 618,
+   "y": 130,
+   "w": 96,
+   "h": 96
+  },
+  "portrait.grish": {
+   "x": 520,
+   "y": 130,
+   "w": 96,
+   "h": 96
+  },
+  "portrait.petrosian": {
+   "x": 716,
+   "y": 130,
+   "w": 96,
+   "h": 96
+  },
+  "prop.bed": {
+   "x": 570,
+   "y": 616,
+   "w": 70,
+   "h": 50
+  },
+  "prop.wardrobe": {
+   "x": 490,
+   "y": 616,
+   "w": 28,
+   "h": 56
+  },
+  "prop.couch": {
+   "x": 76,
+   "y": 260,
+   "w": 34,
+   "h": 82
+  },
+  "prop.table": {
+   "x": 712,
+   "y": 616,
+   "w": 32,
+   "h": 50
+  },
+  "prop.tv": {
+   "x": 550,
+   "y": 616,
+   "w": 18,
+   "h": 54
+  },
+  "prop.laptop": {
+   "x": 390,
+   "y": 682,
+   "w": 36,
+   "h": 26
+  },
+  "prop.toilet": {
+   "x": 578,
+   "y": 682,
+   "w": 30,
+   "h": 20
+  },
+  "prop.sink": {
+   "x": 482,
+   "y": 682,
+   "w": 22,
+   "h": 24
+  },
+  "prop.fridge": {
+   "x": 236,
+   "y": 682,
+   "w": 30,
+   "h": 28
+  },
+  "prop.stove": {
+   "x": 360,
+   "y": 682,
+   "w": 28,
+   "h": 28
+  },
+  "prop.window": {
+   "x": 782,
+   "y": 616,
+   "w": 14,
+   "h": 50
+  },
+  "prop.front_door": {
+   "x": 934,
+   "y": 616,
+   "w": 12,
+   "h": 40
+  },
+  "prop.rug": {
+   "x": 642,
+   "y": 616,
+   "w": 68,
+   "h": 50
+  },
+  "prop.plant": {
+   "x": 428,
+   "y": 682,
+   "w": 26,
+   "h": 26
+  },
+  "prop.beer": {
+   "x": 870,
+   "y": 682,
+   "w": 24,
+   "h": 10
+  },
+  "prop.water": {
+   "x": 792,
+   "y": 682,
+   "w": 14,
+   "h": 14
+  },
+  "prop.snacks": {
+   "x": 632,
+   "y": 682,
+   "w": 20,
+   "h": 20
+  },
+  "prop.kettle": {
+   "x": 654,
+   "y": 682,
+   "w": 28,
+   "h": 18
+  },
+  "prop.mushrooms": {
+   "x": 758,
+   "y": 682,
+   "w": 16,
+   "h": 16
+  },
+  "prop.joint": {
+   "x": 896,
+   "y": 682,
+   "w": 24,
+   "h": 8
+  },
+  "prop.door_neon_a": {
+   "x": 814,
+   "y": 616,
+   "w": 12,
+   "h": 44
+  },
+  "prop.door_neon_b": {
+   "x": 828,
+   "y": 616,
+   "w": 12,
+   "h": 44
+  },
+  "prop.painting": {
+   "x": 962,
+   "y": 616,
+   "w": 28,
+   "h": 36
+  },
+  "prop.knife": {
+   "x": 922,
+   "y": 682,
+   "w": 22,
+   "h": 8
+  },
+  "prop.cup": {
+   "x": 856,
+   "y": 682,
+   "w": 12,
+   "h": 12
+  },
+  "prop.juice": {
+   "x": 744,
+   "y": 682,
+   "w": 12,
+   "h": 18
+  },
+  "prop.food": {
+   "x": 530,
+   "y": 682,
+   "w": 22,
+   "h": 22
+  },
+  "prop.fridge_open": {
+   "x": 268,
+   "y": 682,
+   "w": 30,
+   "h": 28
+  },
+  "prop.wardrobe_open": {
+   "x": 520,
+   "y": 616,
+   "w": 28,
+   "h": 56
+  },
+  "prop.window_open": {
+   "x": 798,
+   "y": 616,
+   "w": 14,
+   "h": 50
+  },
+  "prop.front_door_open": {
+   "x": 948,
+   "y": 616,
+   "w": 12,
+   "h": 40
+  },
+  "prop.candle": {
+   "x": 842,
+   "y": 682,
+   "w": 12,
+   "h": 12
+  },
+  "prop.clock": {
+   "x": 610,
+   "y": 682,
+   "w": 20,
+   "h": 20
+  },
+  "prop.mirror": {
+   "x": 992,
+   "y": 616,
+   "w": 14,
+   "h": 36
+  },
+  "prop.door_neon_c": {
+   "x": 842,
+   "y": 616,
+   "w": 12,
+   "h": 44
+  },
+  "prop.door_neon_d": {
+   "x": 856,
+   "y": 616,
+   "w": 12,
+   "h": 44
+  },
+  "prop.sign_1": {
+   "x": 300,
+   "y": 682,
+   "w": 28,
+   "h": 28
+  },
+  "prop.sign_2": {
+   "x": 330,
+   "y": 682,
+   "w": 28,
+   "h": 28
+  },
+  "prop.bookshelf": {
+   "x": 850,
+   "y": 260,
+   "w": 28,
+   "h": 80
+  },
+  "prop.dresser": {
+   "x": 462,
+   "y": 616,
+   "w": 26,
+   "h": 60
+  },
+  "prop.nightstand": {
+   "x": 554,
+   "y": 682,
+   "w": 22,
+   "h": 22
+  },
+  "prop.armchair": {
+   "x": 870,
+   "y": 616,
+   "w": 40,
+   "h": 40
+  },
+  "prop.floor_lamp": {
+   "x": 704,
+   "y": 682,
+   "w": 18,
+   "h": 18
+  },
+  "prop.desk": {
+   "x": 932,
+   "y": 260,
+   "w": 34,
+   "h": 70
+  },
+  "prop.chair": {
+   "x": 506,
+   "y": 682,
+   "w": 22,
+   "h": 22
+  },
+  "prop.speaker": {
+   "x": 724,
+   "y": 682,
+   "w": 18,
+   "h": 18
+  },
+  "prop.guitar": {
+   "x": 746,
+   "y": 616,
+   "w": 16,
+   "h": 50
+  },
+  "prop.bathtub": {
+   "x": 0,
+   "y": 260,
+   "w": 44,
+   "h": 90
+  },
+  "prop.washer": {
+   "x": 204,
+   "y": 682,
+   "w": 30,
+   "h": 30
+  },
+  "prop.cabinet": {
+   "x": 912,
+   "y": 616,
+   "w": 20,
+   "h": 40
+  },
+  "prop.counter": {
+   "x": 46,
+   "y": 260,
+   "w": 28,
+   "h": 90
+  },
+  "prop.dining_table": {
+   "x": 880,
+   "y": 260,
+   "w": 50,
+   "h": 70
+  },
+  "prop.shoe_rack": {
+   "x": 764,
+   "y": 616,
+   "w": 16,
+   "h": 50
+  },
+  "prop.coat_rack": {
+   "x": 684,
+   "y": 682,
+   "w": 18,
+   "h": 18
+  },
+  "prop.trash": {
+   "x": 776,
+   "y": 682,
+   "w": 14,
+   "h": 14
+  },
+  "prop.pizza_box": {
+   "x": 456,
+   "y": 682,
+   "w": 24,
+   "h": 24
+  },
+  "prop.ashtray": {
+   "x": 828,
+   "y": 682,
+   "w": 12,
+   "h": 12
+  },
+  "prop.bottles": {
+   "x": 808,
+   "y": 682,
+   "w": 18,
+   "h": 12
+  },
+  "tile.wood": {
+   "x": 170,
+   "y": 682,
+   "w": 32,
+   "h": 32
+  },
+  "tile.bath": {
+   "x": 0,
+   "y": 682,
+   "w": 32,
+   "h": 32
+  },
+  "tile.checker": {
+   "x": 34,
+   "y": 682,
+   "w": 32,
+   "h": 32
+  },
+  "tile.trip": {
+   "x": 102,
+   "y": 682,
+   "w": 32,
+   "h": 32
+  },
+  "tile.labyrinth": {
+   "x": 68,
+   "y": 682,
+   "w": 32,
+   "h": 32
+  },
+  "tile.wall": {
+   "x": 136,
+   "y": 682,
+   "w": 32,
+   "h": 32
+  }
+ },
+ "anims": {
+  "player.idle": [
+   "player.idle.0"
+  ],
+  "player.walk": [
+   "player.walk.0",
+   "player.walk.1",
+   "player.walk.2",
+   "player.walk.3"
+  ],
+  "player.attack": [
+   "player.attack.0",
+   "player.attack.1",
+   "player.attack.2"
+  ],
+  "player.dead": [
+   "player.dead.0"
+  ],
+  "player.sit": [
+   "player.sit.0"
+  ],
+  "vahe.idle": [
+   "vahe.idle.0"
+  ],
+  "vahe.walk": [
+   "vahe.walk.0",
+   "vahe.walk.1",
+   "vahe.walk.2",
+   "vahe.walk.3"
+  ],
+  "vahe.attack": [
+   "vahe.attack.0",
+   "vahe.attack.1",
+   "vahe.attack.2"
+  ],
+  "vahe.dead": [
+   "vahe.dead.0"
+  ],
+  "vahe.sit": [
+   "vahe.sit.0"
+  ],
+  "vahe.panic": [
+   "vahe.panic.0",
+   "vahe.panic.1"
+  ],
+  "karen.idle": [
+   "karen.idle.0"
+  ],
+  "karen.walk": [
+   "karen.walk.0",
+   "karen.walk.1",
+   "karen.walk.2",
+   "karen.walk.3"
+  ],
+  "karen.attack": [
+   "karen.attack.0",
+   "karen.attack.1",
+   "karen.attack.2"
+  ],
+  "karen.dead": [
+   "karen.dead.0"
+  ],
+  "karen.sit": [
+   "karen.sit.0"
+  ],
+  "karen.panic": [
+   "karen.panic.0",
+   "karen.panic.1"
+  ],
+  "grish.idle": [
+   "grish.idle.0"
+  ],
+  "grish.walk": [
+   "grish.walk.0",
+   "grish.walk.1",
+   "grish.walk.2",
+   "grish.walk.3"
+  ],
+  "grish.attack": [
+   "grish.attack.0",
+   "grish.attack.1",
+   "grish.attack.2"
+  ],
+  "grish.dead": [
+   "grish.dead.0"
+  ],
+  "grish.sit": [
+   "grish.sit.0"
+  ],
+  "grish.panic": [
+   "grish.panic.0",
+   "grish.panic.1"
+  ],
+  "petrosian.idle": [
+   "petrosian.idle.0"
+  ],
+  "petrosian.walk": [
+   "petrosian.walk.0",
+   "petrosian.walk.1",
+   "petrosian.walk.2",
+   "petrosian.walk.3"
+  ],
+  "petrosian.attack": [
+   "petrosian.attack.0",
+   "petrosian.attack.1",
+   "petrosian.attack.2"
+  ],
+  "petrosian.dead": [
+   "petrosian.dead.0"
+  ],
+  "petrosian.sit": [
+   "petrosian.sit.0"
+  ],
+  "petrosian.panic": [
+   "petrosian.panic.0",
+   "petrosian.panic.1"
+  ],
+  "shadow.idle": [
+   "shadow.idle.0"
+  ],
+  "shadow.walk": [
+   "shadow.walk.0",
+   "shadow.walk.1",
+   "shadow.walk.2",
+   "shadow.walk.3"
+  ],
+  "shadow.attack": [
+   "shadow.attack.0",
+   "shadow.attack.1",
+   "shadow.attack.2"
+  ],
+  "shadow.dead": [
+   "shadow.dead.0"
+  ],
+  "brute.idle": [
+   "brute.idle.0"
+  ],
+  "brute.walk": [
+   "brute.walk.0",
+   "brute.walk.1",
+   "brute.walk.2",
+   "brute.walk.3"
+  ],
+  "brute.attack": [
+   "brute.attack.0",
+   "brute.attack.1",
+   "brute.attack.2"
+  ],
+  "brute.dead": [
+   "brute.dead.0"
+  ],
+  "boss.idle": [
+   "boss.idle.0"
+  ],
+  "boss.walk": [
+   "boss.walk.0",
+   "boss.walk.1",
+   "boss.walk.2",
+   "boss.walk.3"
+  ],
+  "boss.kick": [
+   "boss.kick.0",
+   "boss.kick.1",
+   "boss.kick.2"
+  ],
+  "boss.steam": [
+   "boss.steam.0",
+   "boss.steam.1"
+  ],
+  "boss.dead": [
+   "boss.dead.0"
+  ]
+ }
+}

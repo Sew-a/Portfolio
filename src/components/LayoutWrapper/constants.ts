@@ -1,7 +1,7 @@
 import { paths } from "@/src/routes/mainRoutes";
 
 /** Routes (and their nested paths) where the fixed animated character is hidden. */
-export const CHARACTER_HIDDEN_ROUTES = [paths.demos, paths.chat];
+export const CHARACTER_HIDDEN_ROUTES = [paths.demos, paths.chat, paths.game];
 
 export const pageTransition = {
   initial: { opacity: 0, y: 16, filter: "blur(6px)" },

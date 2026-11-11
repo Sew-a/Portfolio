@@ -5,6 +5,7 @@ export const FOOTER_NAV = [
   { label: "Work", href: paths.work },
   { label: "Demos", href: paths.demos },
   { label: "Chat App", href: paths.chat },
+  { label: "Game", href: paths.game },
   { label: "Download CV", href: paths.resume },
 ];
 

@@ -14,7 +14,7 @@ export default function Work() {
     <div className="pages-spacing">
       <Seo
         title="Work — Sevak Avetisyan, Senior Frontend Engineer"
-        description="Case studies by Sevak Avetisyan: a Module Federation whiteboard, a real-time NestJS + Socket.io group chat, and an AI agents platform."
+        description="Case studies by Sevak Avetisyan: a Module Federation whiteboard, a real-time NestJS + Socket.io group chat, an AI agents platform, and The Trip, a browser action game."
       />
       <ProjectsHero />
       <FeaturedProjects />

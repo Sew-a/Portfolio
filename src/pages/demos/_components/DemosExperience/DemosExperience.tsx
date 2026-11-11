@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import DemosIntro from "@/src/pages/demos/_components/DemosIntro/DemosIntro";
 import CanvasMiniapp from "@/src/pages/demos/_components/CanvasMiniapp/CanvasMiniapp";
 import ChatDemo from "@/src/pages/demos/_components/ChatDemo/ChatDemo";
+import GameDemo from "@/src/pages/demos/_components/GameDemo/GameDemo";
 
 const BANNER_EXIT = {
   opacity: 0,
@@ -20,6 +21,16 @@ export default function DemosExperience() {
 
   return (
     <AnimatePresence>
+      {!miniappOpen && (
+        <motion.section
+          key="game-demo"
+          className="demos-page__banner demos-page__banner--chat"
+          exit={BANNER_EXIT}
+          transition={{ duration: 0.3 }}
+        >
+          <GameDemo />
+        </motion.section>
+      )}
       {!miniappOpen && (
         <motion.section
           key="chat-demo"

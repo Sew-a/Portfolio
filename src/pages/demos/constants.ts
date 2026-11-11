@@ -63,7 +63,30 @@ export const CHAT_DEMO = {
   imageAlt: "Group chat room with messages and an invite code",
 };
 
+export const GAME_TECHNOLOGIES = [
+  "TypeScript",
+  "Canvas 2D",
+  "Web Audio API",
+  "Blender",
+  "Claude",
+];
+
+export const GAME_DEMO = {
+  label: "// Game demo",
+  title: "The Trip",
+  leadOne:
+    "A top-down neon action game I built on my own: a house party that turns into a trip through shadow corridors, a three-phase boss and a maze generated every run, ending quietly back home. Custom TypeScript engine on Canvas 2D, low-poly characters made in Blender, and a soundtrack synthesized live in the browser. Built with Claude as an AI pair programmer.",
+  leadTwo:
+    "This is a demo version. The full indie game is in development in Unity and C#. Needs a keyboard and mouse; contains mature themes.",
+  techLabel: "Technologies",
+  openLabel: "Play The Trip",
+  barTitle: "the-trip.game",
+  image:
+    "https://res.cloudinary.com/dlggumsot/image/upload/v1794400870/Screenshot_2026-11-11_163622_sm9ste.webp",
+  imageAlt: "The Trip: neon top-down view of the house party with the player and the crew",
+};
+
 export const DEMOS_SEO = {
   title: "Demos — Sevak Avetisyan, Senior Frontend Engineer",
-  description: "Live demos: a Konva whiteboard micro-frontend loaded at runtime via Module Federation, and a real-time group chat.",
+  description: "Live demos: a Konva whiteboard micro-frontend loaded at runtime via Module Federation, a real-time group chat, and The Trip, a browser action game.",
 };

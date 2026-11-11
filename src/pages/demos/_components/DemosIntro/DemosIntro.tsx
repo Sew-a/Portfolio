@@ -15,7 +15,7 @@ export default function DemosIntro({ onOpen }: DemosIntroProps) {
         transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
         <span className="demos-page__label">{DEMOS_INTRO.label}</span>
-        <h1 className="demos-page__title">{DEMOS_INTRO.title}</h1>
+        <h2 className="demos-page__title">{DEMOS_INTRO.title}</h2>
         <p className="demos-page__lead">
           {DEMOS_INTRO.leadOne}
           <br />
