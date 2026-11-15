@@ -149,7 +149,6 @@ html {
   // ── Headings & Text ──
   h1, h2, h3,
   .section-title,
-  .hero__accent,
   .portfolio__title,
   .timeline__role,
   .opened-icon {
@@ -176,7 +175,6 @@ html {
 
   .skill-card__cat,
   .footer__logo,
-  .follow-section__title,
   .testimonial-relation {
     color: var(--theme-accent);
   }
@@ -209,8 +207,7 @@ html {
   }
 
   .experience__center-line,
-  .experience__connector,
-  .hero__heading::after {
+  .experience__connector {
     background-color: var(--theme-secondary);
     opacity: 0.5;
   }
@@ -297,11 +294,7 @@ html {
     &__lead { color: var(--theme-text-secondary); }
   }
 
-  .hero__heading { color: #18181b; }
-  .hero__accent { color: var(--theme-accent); }
-  .hero__tag { color: var(--theme-accent); border-color: var(--theme-border); }
-  .hero__sub { color: var(--theme-text-secondary); }
-  .hero__heading::after { background-color: var(--theme-accent); opacity: 0.4; }
+  .intro__text { color: var(--theme-text-secondary); }
   .portfolio-home { color: var(--theme-text); }
 
   .action-button--ghost {

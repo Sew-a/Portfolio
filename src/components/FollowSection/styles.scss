@@ -36,22 +36,6 @@
     }
 }
 
-.follow-section__title {
-    margin-bottom: 60px;
-    padding: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: $font-family-sans;
-    font-size: $fs-body;
-    font-weight: $fw-semibold;
-    transform: rotate(270deg);
-    width: 120px;
-    height: 20px;
-    white-space: nowrap;
-    color: $accent-dark;
-}
-
 .follow-link {
     color: $text-dim;
     transition: all 0.3s ease;

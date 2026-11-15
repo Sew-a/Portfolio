@@ -44,37 +44,31 @@
     @include content-wrapper;
     z-index: 2;
     position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 6rem 1rem;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    padding: 6rem 1.5rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 3rem;
     align-items: center;
-    text-align: center;
 
-    &--centered {
-      align-items: center;
-      text-align: center;
+    @media (max-width: $desktop) {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2.5rem;
+    }
+
+    @media (max-width: $tablet) {
+      padding-top: 7rem;
     }
   }
 
-  &__parallax {
-    position: relative;
-    z-index: 2;
-    width: 100%;
+  &__slider {
+    min-width: 0;
   }
 
-  &__tag {
-    display: inline-block;
-    color: $accent-main;
-    font-size: $fs-micro;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
-    padding: 0.3rem 0.75rem;
-    border: 1px solid rgba($accent-main, 0.25);
-    background: rgba($accent-main, 0.04);
-    border-radius: $border-radius-md;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   &__scroll-hint {
@@ -112,49 +106,26 @@
     }
   }
 
-  &__heading {
-    font-size: clamp(2.5rem, 4.5vw, $fs-display);
-    font-weight: $fw-bold;
-    line-height: 1.1;
-    color: #fff;
-
-    &::after {
-      content: "";
-      display: block;
-      width: 48px;
-      height: 2px;
-      background: $accent-dark;
-      margin: 1.25rem auto 0 auto;
-    }
-  }
-
-  &__accent {
-    color: $accent-main;
-  }
-
-  &__sub {
-    font-size: $fs-body;
-    color: $text-secondary;
-    line-height: 1.7;
-    max-width: 580px;
-    margin: 1.25rem 0 0 0;
-    text-align: center;
-  }
-
-  &__availability {
-    font-size: $fs-micro;
-    color: $accent-main;
-    letter-spacing: 0.08em;
-    margin: 0.75rem 0 0 0;
-    text-align: center;
-  }
-
   &__cta {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
     margin-top: 1.5rem;
-    justify-content: center;
+    justify-content: flex-start;
+  }
+}
+
+.intro {
+  @include content-wrapper;
+  padding: 1rem 1.5rem 3rem;
+
+  &__text {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: $fs-lead;
+    line-height: 1.7;
+    color: $text-secondary;
   }
 }
 

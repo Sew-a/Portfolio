@@ -12,7 +12,7 @@ Besides presenting experience and projects, the site is itself a working showcas
 
 | Route | Page | What it shows |
 | --- | --- | --- |
-| `/` | Home | Hero with an open-to-work line and a Download CV button, featured work grid, experience timeline, approach, and the "Technologies I work with" grid. The fixed "Contact me" rail on the right opens a panel with email, LinkedIn and GitHub on hover or click |
+| `/` | Home | Hero with a glitch-cycling title and Experience / Demos buttons, an intro paragraph, featured work grid, experience timeline, approach, and the "Technologies I work with" grid. The fixed rail of contact icons on the right opens a panel with email, LinkedIn and GitHub on hover |
 | `/work` | Work | Case-study cards, expertise cards (Full-stack, Game Dev, AI), project gallery, testimonials |
 | `/work/micro-canvas` | Case study | Micro Canvas: Miro-like whiteboard shipped as a Module Federation remote |
 | `/work/chat-app` | Case study | Real-time Group Chat: React client + NestJS / Socket.io / PostgreSQL backend |

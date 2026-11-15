@@ -1,5 +1,6 @@
 import {
   HeroSection,
+  IntroSection,
   FeaturedWorkSection,
   ExperienceSection,
   SkillsSection,
@@ -13,9 +14,10 @@ export default function Homepage() {
     <main className="portfolio-home">
       <Seo
         title="Sevak Avetisyan — Senior Frontend Engineer · React, TypeScript, Micro-frontends"
-        description="Senior Frontend Engineer with 6 years building web apps at scale at Picsart (150M+ users). React, TypeScript, micro-frontends, plus full-stack NestJS and PostgreSQL. Open to remote roles in EMEA or worldwide."
+        description="Senior Frontend Engineer with 6 years building web apps at scale at Picsart (150M+ users). React, TypeScript, micro-frontends, plus full-stack NestJS and PostgreSQL."
       />
       <HeroSection />
+      <IntroSection />
       <FeaturedWorkSection />
       <ExperienceSection />
       <ApproachSection />

@@ -58,24 +58,19 @@ export const TECH_ICONS: { name: string; Icon: ComponentType<{ size?: number }> 
 ];
 
 export const HERO_ANIMATIONS = {
-  tag: {
-    initial: { opacity: 0, y: 12 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, delay: 0.15 },
-  },
-  heading: {
-    initial: { opacity: 0, y: 26 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.7, delay: 0.25, ease: [0.21, 0.47, 0.32, 0.98] as const },
-  },
-  sub: {
+  text: {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.7, delay: 0.4 },
+    transition: { duration: 0.7, delay: 0.2 },
   },
   cta: {
     initial: { opacity: 0, y: 16 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6, delay: 0.55 },
+  },
+  slider: {
+    initial: { opacity: 0, x: 40 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 0.8, delay: 0.4 },
   },
 };

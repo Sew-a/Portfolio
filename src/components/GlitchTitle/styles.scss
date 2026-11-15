@@ -1,0 +1,52 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+h1.glitch-title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  // Reserve three lines so the layout does not jump between titles.
+  min-height: calc(3 * 0.95em);
+  font-family: $font-family-display;
+  font-size: $fs-hero;
+  font-weight: $fw-bold;
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--theme-text);
+
+  .glitch-title__line {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .glitch-title__char {
+    display: inline-block;
+    min-width: 0.04em;
+    transition: opacity 0.12s ease, transform 0.12s ease;
+
+    &.glitch-title__char--off {
+      opacity: 0;
+      transform: translateX(calc(var(--glitch-dx) * 0.12em)) skewX(-18deg);
+    }
+  }
+
+  &.glitch-title--active {
+    animation: glitch-title-shift 0.22s steps(2) infinite;
+    text-shadow:
+      0.03em 0 rgba($accent-main, 0.55),
+      -0.03em 0 rgba($accent-red, 0.45);
+  }
+}
+
+@keyframes glitch-title-shift {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(0.015em); }
+  100% { transform: translateX(-0.015em); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch-title--active {
+    animation: none;
+  }
+}

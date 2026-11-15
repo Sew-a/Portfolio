@@ -1,9 +1,14 @@
 export const HERO_DATA = {
-  name: "I'm Sevak",
-  accent: "Senior Frontend Engineer",
-  availability: "Open to remote roles · EMEA or worldwide",
+  name: "Sevak Avetisyan",
+  /** Hero titles that glitch in and out. Each entry is one title, one array item per line. */
+  titles: [
+    ["Senior", "Frontend", "Engineer"],
+    ["Senior", "Full-Stack", "Engineer"],
+    ["Senior", "React", "Developer"],
+    ["Frontend", "Architect"],
+  ],
   summary:
-    "6 years of building web applications at scale, most recently at Picsart, an AI-powered creative platform serving 150M+ users. Focused on frontend architecture, micro-frontends (Module Federation), reusable component libraries, performance and testing. Open to remote roles in EMEA or worldwide.",
+    "6 years of building web applications at scale, most recently at Picsart, an AI-powered creative platform serving 150M+ users. Focused on frontend architecture, micro-frontends (Module Federation), reusable component libraries, performance and testing.",
   email: "sevavetisyan97@gmail.com",
   phone: "+374 41 080497",
   linkedin: "https://www.linkedin.com/in/sevak-avetisyan-arm/",

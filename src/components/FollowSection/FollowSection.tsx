@@ -90,14 +90,6 @@ const FollowSection = () => {
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={close}
       >
-        <button
-          className="follow-section__title"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-expanded={isOpen}
-          aria-controls="contact-panel"
-        >
-          Contact me
-        </button>
         {CONTACT_LINKS.map(({ label, href, external, Icon }) => (
           <a
             key={label}
