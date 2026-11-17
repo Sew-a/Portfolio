@@ -9,6 +9,7 @@ const MicroCanvas = lazy(() => import("@/src/pages/work/micro-canvas/page"));
 const ChatApp = lazy(() => import("@/src/pages/work/chat-app/page"));
 const AiAgents = lazy(() => import("@/src/pages/work/ai-agents/page"));
 const TheTrip = lazy(() => import("@/src/pages/work/the-trip/page"));
+const RustyCompanion = lazy(() => import("@/src/pages/work/rusty-companion/page"));
 const Resume = lazy(() => import("@/src/pages/resume/page"));
 const Playground = lazy(() => import("@/src/pages/playground/page"));
 const Demos = lazy(() => import("@/src/pages/demos/page"));
@@ -33,6 +34,7 @@ export default function App() {
           <Route path={paths.chatApp} element={<ChatApp />} />
           <Route path={paths.aiAgents} element={<AiAgents />} />
           <Route path={paths.theTrip} element={<TheTrip />} />
+          <Route path={paths.rustyCompanion} element={<RustyCompanion />} />
           <Route path={paths.resume} element={<Resume />} />
           <Route path={paths.playground} element={<Playground />} />
           <Route path={paths.demos} element={<Demos />} />

@@ -13,11 +13,12 @@ Besides presenting experience and projects, the site is itself a working showcas
 | Route | Page | What it shows |
 | --- | --- | --- |
 | `/` | Home | Hero with a glitch-cycling title and Experience / Demos buttons, an intro paragraph, featured work grid, experience timeline, approach, and the "Technologies I work with" grid. The fixed rail of contact icons on the right opens a panel with email, LinkedIn and GitHub on hover |
-| `/work` | Work | Case-study cards, expertise cards (Full-stack, Game Dev, AI), project gallery, testimonials |
+| `/work` | Work | Case-study cards, expertise cards (Full-stack, Game Dev, AI), testimonials |
 | `/work/micro-canvas` | Case study | Micro Canvas: Miro-like whiteboard shipped as a Module Federation remote |
 | `/work/chat-app` | Case study | Real-time Group Chat: React client + NestJS / Socket.io / PostgreSQL backend |
 | `/work/ai-agents` | Case study | AI Agents & Prompt Engineering Hub (Next.js 16 on Cloudflare Workers) |
 | `/work/the-trip` | Case study | The Trip: solo-built top-down neon action game (TypeScript + Canvas 2D, Blender art), demo of an upcoming Unity / C# indie game |
+| `/work/rusty-companion` | Case study | Rusty Companion: free, open-source desktop robot for Claude Code. Custom page with a live 3D Rusty you can make act out every mood, an event → reaction table, screenshots and copyable install steps |
 | `/demos` | Demos | Opens the live **Canvas miniapp** (loaded at runtime) and links to the chat demo and the game |
 | `/chat` | Chat lobby | Sign in, list your groups, create a group or join one with an invite code |
 | `/chat/:groupId` | Chat room | Sidebar with all your groups, live messages, history, copyable invite code |
@@ -42,7 +43,10 @@ Old `/projects` and `/projects/:slug` URLs redirect to `/work`.
 - **Art.** Low-poly models in Blender, rendered top-down into a pixel sprite atlas (`public/smoke-sim/`). Source `.blend` and the render script live in `assets-src/smoke-sim/`. If the atlas is missing the game falls back to coloured shapes.
 - **Audio.** Everything is synthesized with the Web Audio API (synthwave loop, drones, SFX); no audio files.
 
-The animated character (bottom-right) is hidden on `/demos`, `/chat` and `/game` so it doesn't cover the apps.
+### Rusty (the animated character)
+- **Who.** Rusty, the robot from the [rusty-companion](https://github.com/Sew-a/rusty-companion) project, stands in the bottom-left corner. It is the real model from the desktop app (`public/rusty/robot.glb`), rendered live with React Three Fiber, with its Blender clips, coded poses and a canvas face that blinks and follows the mouse. The model, poses and face are ported in `src/lib/rusty/`; the shared component is `src/components/Rusty/`.
+- **Controls.** Scroll or hold A / D (or the arrow keys) and he walks; left click and he waves, hops or cheers; right click and he dances; Esc makes him sad until the next click. Left alone, he now and then sips coffee, yawns, thinks or points.
+- **Where.** Hidden on `/demos`, `/chat` and `/game` so he doesn't cover the apps, and on `/work/rusty-companion`, which has its own big interactive Rusty.
 
 ---
 

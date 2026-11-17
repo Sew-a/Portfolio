@@ -22,7 +22,7 @@ export type Project = {
   description: string;
   role: string;
   year: string;
-  status: string;
+  status?: string;
   image: string;
   imageAlt: string;
   accent: string;
@@ -36,6 +36,93 @@ export type Project = {
 };
 
 export const PROJECTS: Project[] = [
+  {
+    slug: "rusty-companion",
+    title: "Rusty Companion",
+    tagline: "A little animated robot on your desktop that shows what Claude Code is doing",
+    summary:
+      "Rusty is a free, open-source desktop companion for Claude Code. While Claude works in the terminal or the Claude desktop app, Rusty thinks, gets busy, points at the browser, asks for your permission, cheers when a task is done and reads a short summary of the reply aloud. Anyone can download it from GitHub and run it on Windows.",
+    description:
+      "Rusty is an original character I designed from my own sketches and built end to end: a boxy burnt-orange screen robot modelled and animated in Blender with a Python script, rendered in a transparent always-on-top Electron window with three.js. Claude Code sends each event (prompt submitted, tool used, permission needed, reply finished) to a local HTTP hook server, and pure, unit-tested modules turn those events into Rusty's moods. Win32 calls through koffi let him find and sit on the active window, and Kokoro-82M runs on the CPU to give him a voice, so nothing leaves your machine. It is a free project for anyone to clone from GitHub and use; it runs daily on Windows 11, with macOS and Linux not supported yet.",
+    role: "Solo developer & designer",
+    year: "2026",
+    image:
+      "https://res.cloudinary.com/dlggumsot/image/upload/v1794910795/Screenshot_2026-11-17_141530_pc7kkx.webp",
+    imageAlt: "Rusty, a boxy orange robot with a screen face, saying hi in a speech bubble",
+    accent: "#d97757",
+    icon: "BotMessageSquare",
+    links: {
+      repo: "https://github.com/Sew-a/rusty-companion",
+    },
+    techStack: [
+      "Electron",
+      "TypeScript",
+      "three.js",
+      "Blender (Python)",
+      "Claude Code hooks",
+      "Kokoro TTS",
+      "koffi (Win32)",
+      "esbuild",
+      "Vitest",
+    ],
+    highlights: [
+      "Free and open source: clone it from GitHub, run npm install and npm start",
+      "Reacts live to Claude Code in the terminal and in the Claude desktop app's Code tab",
+      "Original 3D character, modelled and animated by a re-runnable Blender Python script",
+      "Speaks reply summaries with an on-device voice model; no audio or text leaves your computer",
+      "Strolls along the taskbar and hops onto the window you click",
+    ],
+    architecture: [
+      {
+        title: "Claude Code hooks → local server",
+        desc: "An installer adds http hooks to ~/.claude/settings.json that post every Claude Code event to 127.0.0.1. The server always answers instantly with {}, so it never approves or blocks anything for the user, and fails silently when Rusty isn't running.",
+      },
+      {
+        title: "Pure decision modules",
+        desc: "The event router, state machine and idle scheduler are plain TypeScript with no Electron imports, covered by Vitest. The renderer only applies their decisions to the model.",
+      },
+      {
+        title: "Blender to glTF pipeline",
+        desc: "One Python script builds the model, props, colours and animation clips and exports a ~90 KB glTF. Sync tests keep clip frame ranges, part names and the screen aspect in step between Blender and the app.",
+      },
+      {
+        title: "Desktop integration",
+        desc: "A transparent always-on-top Electron window, Win32 calls via koffi to find the active window and the taskbar, and a worker that runs the Kokoro-82M voice model on the CPU.",
+      },
+    ],
+    features: [
+      {
+        title: "Shows Claude's state",
+        desc: "Thinking dots when you send a prompt, a busy look while Claude edits files or runs commands, pointing when it uses the browser, notes on a notepad during research.",
+      },
+      {
+        title: "Asks for permission",
+        desc: "Waves both arms and asks out loud when Claude needs your OK; after a minute he knocks on his screen to remind you.",
+      },
+      {
+        title: "Reads replies aloud",
+        desc: "Cheers when Claude finishes, shows the answer in a speech bubble and reads the first three sentences, then offers to read the rest.",
+      },
+      {
+        title: "Lives on your desktop",
+        desc: "Strolls along the taskbar, sits on the active window, watches your mouse, yawns, sips coffee in the morning and dances after a long task.",
+      },
+      {
+        title: "Spoken skills",
+        desc: "Optional Claude Code skills for discussion, brainstorming, quizzes and a daily recap, written to be heard rather than read.",
+      },
+      {
+        title: "Private by default",
+        desc: "Everything runs locally: hook events only go to 127.0.0.1 and the voice model runs on your CPU.",
+      },
+    ],
+    screenshots: [
+      { src: "/projects/rusty-companion.png", title: "Sitting on top of a Chrome window" },
+      { src: "/projects/rusty-on-vscode.png", title: "Sitting on the Claude Code panel in VS Code" },
+      { src: "/projects/rusty-tour-sheet.png", title: "Every state Rusty can be in" },
+      { src: "/projects/rusty-moods-sheet.png", title: "Taking notes, sprinting, resting, dancing, knocking and morning coffee" },
+    ],
+  },
   {
     slug: "the-trip",
     title: "The Trip",
@@ -393,49 +480,61 @@ export const FEATURED_WORK: FeaturedItem[] = [
     slug: "the-trip",
     title: "The Trip",
     tagline: "Top-down neon action game, playable demo",
-    image: PROJECTS[0].image,
+    image: PROJECTS[1].image,
     accent: "#ff007f",
     href: "/work/the-trip",
     tags: ["TypeScript", "Canvas 2D", "Web Audio", "Blender", "Claude"],
     result:
       "Solo-built five-act story game with a boss fight and a generated maze. Demo of an indie game coming to Unity and C#.",
+    links: PROJECTS[1].links,
+  },
+  {
+    slug: "rusty-companion",
+    title: "Rusty Companion",
+    tagline: "Animated desktop robot that shows what Claude Code is doing",
+    image: PROJECTS[0].image,
+    accent: "#d97757",
+    href: "/work/rusty-companion",
+    tags: ["Electron", "three.js", "Blender", "Claude Code hooks", "TypeScript"],
+    result:
+      "Free and open source on GitHub: he thinks, works, asks for permission and reads Claude's replies aloud, all on your machine.",
     links: PROJECTS[0].links,
   },
   {
     slug: "micro-canvas",
     title: "Micro Canvas",
     tagline: "Miro-like whiteboard loaded at runtime via Module Federation",
-    image: PROJECTS[1].image,
+    image: PROJECTS[2].image,
     accent: "#00f0ff",
     href: "/work/micro-canvas",
     tags: ["React", "TypeScript", "Vite", "Module Federation", "Konva.js"],
     result:
       "Miro-like whiteboard shipped as an independent module and loaded at runtime. LCP 1.50s, CLS 0.00, INP 64ms.",
-    links: PROJECTS[1].links,
+    links: PROJECTS[2].links,
   },
   {
     slug: "chat-app",
     title: "Real-time Group Chat",
     tagline: "React + NestJS / Socket.io group chat",
-    image: PROJECTS[2].image,
+    image: PROJECTS[3].image,
     accent: "#ff2d95",
     href: "/work/chat-app",
     tags: ["React", "NestJS", "Socket.io", "PostgreSQL", "Prisma"],
     result:
       "Sign in, create a group, share the invite code, and only people with the code can join. Live updates over WebSockets.",
-    links: PROJECTS[2].links,
+    links: PROJECTS[3].links,
   },
   {
     slug: "ai-agents",
     title: "AI Agents & Prompt Engineering Hub",
     tagline: "Prompt engineering, agents & RAG made copyable",
-    image: PROJECTS[3].image,
+    image: PROJECTS[4].image,
     accent: "#a855f7",
     href: "/work/ai-agents",
     tags: ["Next.js 16", "React 19", "Cloudflare"],
     result:
       "11 pages on prompts, agents and RAG, with client-side search and a comparison of 9 open-source coding agents.",
-    links: PROJECTS[3].links,
+    links: PROJECTS[4].links,
   },
   {
     slug: "google-picker",

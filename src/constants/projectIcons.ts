@@ -1,8 +1,9 @@
-import { Bot, FolderOpen, Gamepad2, MessagesSquare, PenTool } from "lucide-react";
+import { Bot, BotMessageSquare, FolderOpen, Gamepad2, MessagesSquare, PenTool } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export const PROJECT_ICONS: Record<string, LucideIcon> = {
   Bot,
+  BotMessageSquare,
   Gamepad2,
   MessagesSquare,
   PenTool,

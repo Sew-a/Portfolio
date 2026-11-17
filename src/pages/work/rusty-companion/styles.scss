@@ -1,0 +1,747 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+// Rusty's palette, from the model: burnt orange shell, cream screen, near-black ink.
+$rusty-orange: #d97757;
+$rusty-cream: #f4ede4;
+$rusty-ink: #2b211c;
+
+.rusty-page {
+  --project-accent: #{$rusty-orange};
+
+  &__body {
+    padding-top: 0;
+  }
+
+  // The site paints headings pink; on Rusty's page they follow his palette instead.
+  .rusty-hero__title,
+  .rusty-install__needs h3 {
+    color: var(--theme-text);
+  }
+}
+
+// ─── Hero ───────────────────────────────────────
+.rusty-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1.5rem 4rem;
+
+  &__glow {
+    position: absolute;
+    inset: -20% -10% auto auto;
+    width: 70vw;
+    height: 70vw;
+    max-width: 900px;
+    max-height: 900px;
+    background: radial-gradient(circle, rgba($rusty-orange, 0.22), transparent 62%);
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 3.5rem;
+    align-items: center;
+
+    @media (max-width: $desktop) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+  }
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--theme-text-muted);
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $rusty-orange;
+    }
+  }
+
+  &__eyebrow {
+    font-family: $font-family-mono;
+    font-size: $fs-micro;
+    letter-spacing: 0.18em;
+    color: $rusty-orange;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family-display;
+    font-size: $fs-hero;
+    font-weight: $fw-bold;
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    color: var(--theme-text);
+  }
+
+  &__title-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px $rusty-orange;
+  }
+
+  &__tagline {
+    color: $rusty-orange;
+    font-size: $fs-h4;
+    font-weight: $fw-semibold;
+    line-height: 1.4;
+    max-width: 520px;
+  }
+
+  &__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__badge {
+    font-size: $fs-micro;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--theme-text-secondary);
+    border: 1px solid var(--theme-border);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+
+    &--accent {
+      color: $rusty-ink;
+      background: $rusty-orange;
+      border-color: $rusty-orange;
+      font-weight: $fw-bold;
+    }
+  }
+
+  &__summary {
+    color: var(--theme-text-secondary);
+    font-size: $fs-body;
+    line-height: 1.75;
+    max-width: 560px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 0.4rem;
+  }
+
+  &__btn {
+    @include btn-base;
+    padding: 0.8rem 1.4rem;
+    border-radius: 999px;
+    color: var(--theme-text);
+    border-color: var(--theme-border);
+    background: transparent;
+
+    svg {
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      border-color: $rusty-orange;
+      color: $rusty-orange;
+
+      svg {
+        transform: translateY(2px);
+      }
+    }
+
+    &--primary {
+      color: $rusty-ink;
+      background: $rusty-orange;
+      border-color: $rusty-orange;
+      font-weight: $fw-bold;
+      box-shadow: 0 8px 30px rgba($rusty-orange, 0.35);
+
+      &:hover {
+        color: $rusty-ink;
+        background: color-mix(in srgb, #{$rusty-orange} 85%, white);
+        transform: translateY(-2px);
+
+        svg {
+          transform: rotate(-8deg);
+        }
+      }
+    }
+  }
+
+  &__tech {
+    list-style: none;
+    padding: 0;
+    margin: 0.6rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+
+    li {
+      font-family: $font-family-mono;
+      font-size: $fs-micro;
+      color: var(--theme-text-muted);
+
+      &::before {
+        content: "▸ ";
+        color: $rusty-orange;
+      }
+    }
+  }
+
+  &__stage {
+    min-width: 0;
+  }
+}
+
+// ─── Live stage ─────────────────────────────────
+.rusty-stage {
+  &__window {
+    border: 1px solid var(--theme-border);
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    background: var(--theme-bg-secondary);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba($rusty-orange, 0.08);
+  }
+
+  &__titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--theme-border);
+  }
+
+  &__dots {
+    display: inline-flex;
+    gap: 6px;
+
+    i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--theme-border);
+
+      &:first-child {
+        background: $rusty-orange;
+      }
+    }
+  }
+
+  &__title {
+    flex: 1;
+    font-family: $font-family-mono;
+    font-size: $fs-micro;
+    color: var(--theme-text-muted);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: $font-family-mono;
+    font-size: $fs-micro;
+    font-weight: $fw-bold;
+    color: $rusty-orange;
+
+    &::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: $rusty-orange;
+      animation: rusty-pulse 1.6s ease-in-out infinite;
+    }
+  }
+
+  &__scene {
+    position: relative;
+    height: clamp(380px, 42vw, 460px);
+    background:
+      linear-gradient(transparent 95%, rgba(127, 127, 127, 0.08) 95%) 0 0 / 100% 28px,
+      linear-gradient(90deg, transparent 95%, rgba(127, 127, 127, 0.08) 95%) 0 0 / 28px 100%;
+  }
+
+  &__canvas {
+    position: absolute !important;
+    inset: 0 0 26px;
+  }
+
+  &__taskbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 26px;
+    border-top: 1px solid var(--theme-border);
+    background: var(--theme-bg);
+  }
+
+  &__bubble {
+    position: absolute;
+    z-index: 1;
+    top: 1.2rem;
+    left: 50%;
+    transform-origin: bottom center;
+    translate: -50% 0;
+    max-width: min(80%, 340px);
+    padding: 0.7rem 1.1rem;
+    border: 2px solid $rusty-ink;
+    border-radius: 16px;
+    background: $rusty-cream;
+    color: $rusty-ink;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+    line-height: 1.4;
+    text-align: center;
+    box-shadow: 3px 3px 0 $rusty-ink;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -9px;
+      width: 14px;
+      height: 14px;
+      background: $rusty-cream;
+      border-right: 2px solid $rusty-ink;
+      border-bottom: 2px solid $rusty-ink;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+
+  &__hint {
+    margin: 1.1rem 0 0.7rem;
+    color: var(--theme-text-muted);
+    font-size: $fs-sm;
+  }
+
+  &__controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  &__control {
+    font-family: $font-family-sans;
+    font-size: $fs-sm;
+    font-weight: $fw-medium;
+    color: var(--theme-text-secondary);
+    background: var(--theme-bg-secondary);
+    border: 1px solid var(--theme-border);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s;
+
+    &:hover {
+      color: $rusty-orange;
+      border-color: $rusty-orange;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $rusty-orange;
+      outline-offset: 2px;
+    }
+
+    &--active {
+      color: $rusty-ink;
+      background: $rusty-orange;
+      border-color: $rusty-orange;
+
+      &:hover {
+        color: $rusty-ink;
+      }
+    }
+  }
+}
+
+@keyframes rusty-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+// ─── Event → reaction table ─────────────────────
+.rusty-reactions {
+  margin-top: 3rem;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--theme-border);
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(170px, 1.1fr) 1.3fr auto 1.4fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--theme-border);
+    transition: background 0.25s;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover,
+    &--active {
+      background: rgba($rusty-orange, 0.07);
+    }
+
+    &--active .rusty-reactions__event {
+      color: $rusty-ink;
+      background: $rusty-orange;
+    }
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr auto;
+      gap: 0.4rem 1rem;
+    }
+  }
+
+  &__event {
+    justify-self: start;
+    font-family: $font-family-mono;
+    font-size: $fs-micro;
+    color: $rusty-orange;
+    background: rgba($rusty-orange, 0.1);
+    border-radius: $border-radius-sm;
+    padding: 0.25rem 0.5rem;
+    transition: background 0.25s, color 0.25s;
+
+    @media (max-width: $tablet) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__when {
+    color: var(--theme-text-secondary);
+    font-size: $fs-sm;
+
+    @media (max-width: $tablet) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__arrow {
+    color: $rusty-orange;
+    font-weight: $fw-bold;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__does {
+    color: var(--theme-text);
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
+  }
+
+  &__play {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: $font-family-sans;
+    font-size: $fs-micro;
+    font-weight: $fw-semibold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--theme-text-secondary);
+    background: transparent;
+    border: 1px solid var(--theme-border);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      color: $rusty-orange;
+      border-color: $rusty-orange;
+      outline: none;
+    }
+  }
+}
+
+// ─── Gallery (bento) ────────────────────────────
+.rusty-gallery {
+  margin-top: 5rem;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    margin: 0;
+    border: 1px solid var(--theme-border);
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    background: var(--theme-bg-secondary);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s, transform 0.3s;
+
+    &:hover {
+      border-color: $rusty-orange;
+      transform: translateY(-3px);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    figcaption {
+      padding: 0.7rem 1rem;
+      font-family: $font-family-mono;
+      font-size: $fs-micro;
+      color: var(--theme-text-muted);
+      border-top: 1px solid var(--theme-border);
+    }
+
+    // Cover screenshot large, VS Code shot beside it, the two sheets below.
+    &--0 {
+      grid-column: span 4;
+    }
+
+    &--1 {
+      grid-column: span 2;
+
+      img {
+        object-fit: contain;
+        background: var(--theme-bg);
+      }
+    }
+
+    &--2,
+    &--3 {
+      grid-column: span 3;
+
+      img {
+        object-fit: contain;
+        background: #ccd1d6;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      &--0,
+      &--1,
+      &--2,
+      &--3 {
+        grid-column: auto;
+      }
+    }
+  }
+}
+
+// ─── Install ────────────────────────────────────
+.rusty-install {
+  margin-top: 5rem;
+  scroll-margin-top: 6rem;
+
+  &__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+    gap: 1.25rem;
+
+    @media (max-width: $desktop) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__terminal {
+    border: 1px solid #2c2c35;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    background: #0b0b10;
+    color: #ededee;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid #2c2c35;
+    font-family: $font-family-mono;
+    font-size: $fs-micro;
+    color: #71717a;
+
+    .rusty-stage__dots i {
+      background: #2c2c35;
+
+      &:first-child {
+        background: $rusty-orange;
+      }
+    }
+  }
+
+  &__steps {
+    list-style: none;
+    margin: 0;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  &__comment {
+    display: block;
+    font-family: $font-family-mono;
+    font-size: $fs-micro;
+    color: #71717a;
+    margin-bottom: 0.35rem;
+  }
+
+  &__line {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: space-between;
+
+    code {
+      font-family: $font-family-mono;
+      font-size: $fs-sm;
+      overflow-x: auto;
+      white-space: nowrap;
+      @include themed-scrollbar;
+    }
+  }
+
+  &__prompt {
+    color: $rusty-orange;
+  }
+
+  &__copy {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: $font-family-sans;
+    font-size: $fs-micro;
+    color: #a1a1aa;
+    background: transparent;
+    border: 1px solid #2c2c35;
+    border-radius: $border-radius-md;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      color: $rusty-orange;
+      border-color: $rusty-orange;
+      outline: none;
+    }
+  }
+
+  &__needs {
+    border: 1px solid var(--theme-border);
+    border-radius: $border-radius-xl;
+    background: var(--theme-bg-secondary);
+    padding: 1.5rem;
+
+    h3 {
+      font-size: $fs-h4;
+      color: var(--theme-text);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      color: var(--theme-text-secondary);
+      font-size: $fs-sm;
+      line-height: 1.5;
+    }
+  }
+
+  &__check {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: $rusty-orange;
+  }
+}
+
+// ─── Closing call to action ─────────────────────
+.rusty-cta {
+  margin-top: 5rem;
+  padding: 3.5rem 2rem;
+  border-radius: $border-radius-xl;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  background:
+    radial-gradient(circle at 50% 120%, rgba($rusty-orange, 0.35), transparent 60%),
+    var(--theme-bg-secondary);
+  border: 1px solid rgba($rusty-orange, 0.35);
+
+  &__title {
+    font-family: $font-family-display;
+    font-size: $fs-h2;
+    font-weight: $fw-bold;
+    line-height: 1.2;
+    color: var(--theme-text);
+    max-width: 620px;
+  }
+
+  &__note {
+    font-size: $fs-micro;
+    color: var(--theme-text-muted);
+  }
+}

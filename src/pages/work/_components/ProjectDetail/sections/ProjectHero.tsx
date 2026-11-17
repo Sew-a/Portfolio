@@ -33,7 +33,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
           <Icon size={34} strokeWidth={1.5} />
         </div>
         <div className="project-detail__meta">
-          {[project.role, project.year, project.status].map((item) => (
+          {[project.role, project.year, project.status].filter(Boolean).map((item) => (
             <span key={item}>{item}</span>
           ))}
         </div>

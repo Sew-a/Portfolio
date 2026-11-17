@@ -1,7 +1,8 @@
 import { paths } from "@/src/routes/mainRoutes";
 
 /** Routes (and their nested paths) where the fixed animated character is hidden. */
-export const CHARACTER_HIDDEN_ROUTES = [paths.demos, paths.chat, paths.game];
+// The Rusty case study has its own big Rusty, so the corner one steps aside there.
+export const CHARACTER_HIDDEN_ROUTES = [paths.demos, paths.chat, paths.game, paths.rustyCompanion];
 
 export const pageTransition = {
   initial: { opacity: 0, y: 16, filter: "blur(6px)" },

@@ -3,6 +3,9 @@ export default function cloudinaryLoader(
   width?: number,
   height?: number,
 ): string {
+  // Files served from public/ (e.g. "/projects/rusty-companion.png") aren't on Cloudinary.
+  if (src.startsWith("/")) return src;
+
   const base = "https://res.cloudinary.com/dlggumsot/image/upload";
   const params = ["f_auto", "q_auto"];
   if (width) params.push(`w_${width}`);

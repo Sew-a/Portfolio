@@ -1,22 +1,20 @@
-import { Canvas } from "@react-three/fiber";
+import Rusty from "@/src/components/Rusty";
 import { useCharacterLogic } from "./useCharacterLogic";
-import { Character } from "./Character";
 
 export default function CharacterAnimation() {
-  const { isRunning, currentAction, handleActionComplete, isReady, handleLoaded } =
-    useCharacterLogic();
- 
+  const { isReady, mood, clip, facing, handleLoaded, handleClipEnd } = useCharacterLogic();
+
   return (
     <div className="character-section-wrapper">
-      <div className={`character-animation-container ${isReady ? 'ready' : ''}`}>
-        <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
-          <Character
-            isRunning={isRunning}
-            currentAction={currentAction}
-            onActionComplete={handleActionComplete}
-            onLoad={handleLoaded}
-          />
-        </Canvas>
+      <div className={`character-animation-container ${isReady ? "ready" : ""}`}>
+        <Rusty
+          mood={mood}
+          clip={clip}
+          facing={facing}
+          viewHeight={2.1}
+          onLoad={handleLoaded}
+          onClipEnd={handleClipEnd}
+        />
       </div>
     </div>
   );

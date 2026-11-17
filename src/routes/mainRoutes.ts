@@ -5,6 +5,7 @@ export const paths = {
     chatApp: '/work/chat-app',
     aiAgents: '/work/ai-agents',
     theTrip: '/work/the-trip',
+    rustyCompanion: '/work/rusty-companion',
     resume: '/resume',
     playground: '/playground',
     projects: '/projects',
