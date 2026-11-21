@@ -41,9 +41,9 @@ export const PROJECTS: Project[] = [
     title: "Rusty Companion",
     tagline: "A little animated robot on your desktop that shows what Claude Code is doing",
     summary:
-      "Rusty is a free, open-source desktop companion for Claude Code. While Claude works in the terminal or the Claude desktop app, Rusty thinks, gets busy, points at the browser, asks for your permission, cheers when a task is done and reads a short summary of the reply aloud. Anyone can download it from GitHub and run it on Windows.",
+      "Rusty is a free, open-source desktop companion for Claude Code. While Claude works in the terminal or the Claude desktop app, Rusty thinks, gets busy, points at the browser, asks for your permission, cheers when a task is done and reads a short summary of the reply aloud. Anyone can download it from GitHub and run it on Windows, with macOS in beta.",
     description:
-      "Rusty is an original character I designed from my own sketches and built end to end: a boxy burnt-orange screen robot modelled and animated in Blender with a Python script, rendered in a transparent always-on-top Electron window with three.js. Claude Code sends each event (prompt submitted, tool used, permission needed, reply finished) to a local HTTP hook server, and pure, unit-tested modules turn those events into Rusty's moods. Win32 calls through koffi let him find and sit on the active window, and Kokoro-82M runs on the CPU to give him a voice, so nothing leaves your machine. It is a free project for anyone to clone from GitHub and use; it runs daily on Windows 11, with macOS and Linux not supported yet.",
+      "Rusty is an original character I designed from my own sketches and built end to end: a boxy burnt-orange screen robot modelled and animated in Blender with a Python script, rendered in a transparent always-on-top Electron window with three.js. Claude Code sends each event (prompt submitted, tool used, permission needed, reply finished) to a local HTTP hook server, and pure, unit-tested modules turn those events into Rusty's moods. Win32 calls through koffi let him find and sit on the active window, and Kokoro-82M runs on the CPU to give him a voice, so nothing leaves your machine. It is a free project for anyone to clone from GitHub and use; it runs daily on Windows 11, should work on macOS too (everything except sitting on windows, not tested yet), and Linux isn't supported yet.",
     role: "Solo developer & designer",
     year: "2026",
     image:
@@ -117,8 +117,6 @@ export const PROJECTS: Project[] = [
       },
     ],
     screenshots: [
-      { src: "/projects/rusty-companion.png", title: "Sitting on top of a Chrome window" },
-      { src: "/projects/rusty-on-vscode.png", title: "Sitting on the Claude Code panel in VS Code" },
       { src: "/projects/rusty-tour-sheet.png", title: "Every state Rusty can be in" },
       { src: "/projects/rusty-moods-sheet.png", title: "Taking notes, sprinting, resting, dancing, knocking and morning coffee" },
     ],

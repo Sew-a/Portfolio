@@ -7,7 +7,7 @@ interface GallerySectionProps {
   project: Project;
 }
 
-/** Bento grid of desktop screenshots and mood sheets. The cover isn't repeated: it shows the stage that is live above. */
+/** The two mood sheets, side by side. The cover isn't repeated: it shows the stage that is live above. */
 export default function GallerySection({ project }: GallerySectionProps) {
   const shots = project.screenshots ?? [];
 

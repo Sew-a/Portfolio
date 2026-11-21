@@ -18,7 +18,7 @@ Besides presenting experience and projects, the site is itself a working showcas
 | `/work/chat-app` | Case study | Real-time Group Chat: React client + NestJS / Socket.io / PostgreSQL backend |
 | `/work/ai-agents` | Case study | AI Agents & Prompt Engineering Hub (Next.js 16 on Cloudflare Workers) |
 | `/work/the-trip` | Case study | The Trip: solo-built top-down neon action game (TypeScript + Canvas 2D, Blender art), demo of an upcoming Unity / C# indie game |
-| `/work/rusty-companion` | Case study | Rusty Companion: free, open-source desktop robot for Claude Code. Custom page with a live 3D Rusty you can make act out every mood, an event → reaction table, screenshots and copyable install steps |
+| `/work/rusty-companion` | Case study | Rusty Companion: free, open-source desktop robot for Claude Code. Custom page with a live 3D Rusty you can make act out every mood, an event → reaction table, mood sheets and copyable install steps |
 | `/demos` | Demos | Opens the live **Canvas miniapp** (loaded at runtime) and links to the chat demo and the game |
 | `/chat` | Chat lobby | Sign in, list your groups, create a group or join one with an invite code |
 | `/chat/:groupId` | Chat room | Sidebar with all your groups, live messages, history, copyable invite code |

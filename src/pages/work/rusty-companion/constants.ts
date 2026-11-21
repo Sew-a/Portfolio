@@ -47,7 +47,7 @@ export const STAGE_ACTIONS: StageAction[] = [
 export const RUSTY_HERO_COPY = {
   eyebrow: "// FREE & OPEN SOURCE",
   freeBadge: "Free to download",
-  platformBadge: "Windows 10 / 11",
+  platformBadge: "Windows 10 / 11 · macOS beta",
   download: "Download on GitHub",
   install: "How to install",
   stageTitle: "rusty — live in your browser",
@@ -71,7 +71,7 @@ export const REACTIONS: { event: string; when: string; does: string; action: str
 export const REACTIONS_HEADING = { title: "When Claude…, Rusty…", label: "// EVENT → REACTION" };
 export const REACTIONS_PLAY = "Show me";
 
-export const GALLERY_HEADING = { title: "On the desktop", label: "// SCREENSHOTS" };
+export const GALLERY_HEADING = { title: "Every mood", label: "// STATES" };
 
 export const INSTALL_HEADING = { title: "Take Rusty home", label: "// INSTALL IN 2 MINUTES" };
 
@@ -85,7 +85,7 @@ export const INSTALL_STEPS: { comment: string; command: string }[] = [
 export const INSTALL_COPY = { copy: "Copy", copied: "Copied", terminalTitle: "PowerShell", requirementsTitle: "You need" };
 
 export const REQUIREMENTS = [
-  "Windows 10 or 11",
+  "Windows 10 or 11 (macOS should work too, untested)",
   "Node.js 20 or newer",
   "Claude Code 2.1 or newer (CLI or the desktop app's Code tab)",
   "About 400 MB for the voice model, downloaded on first start",

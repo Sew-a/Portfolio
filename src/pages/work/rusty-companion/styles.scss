@@ -542,22 +542,9 @@ $rusty-ink: #2b211c;
       border-top: 1px solid var(--theme-border);
     }
 
-    // Cover screenshot large, VS Code shot beside it, the two sheets below.
-    &--0 {
-      grid-column: span 4;
-    }
-
+    // The two mood sheets side by side.
+    &--0,
     &--1 {
-      grid-column: span 2;
-
-      img {
-        object-fit: contain;
-        background: var(--theme-bg);
-      }
-    }
-
-    &--2,
-    &--3 {
       grid-column: span 3;
 
       img {
@@ -568,9 +555,7 @@ $rusty-ink: #2b211c;
 
     @media (max-width: $tablet) {
       &--0,
-      &--1,
-      &--2,
-      &--3 {
+      &--1 {
         grid-column: auto;
       }
     }
